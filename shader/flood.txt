@@ -1,0 +1,24 @@
+//Via Github@CodingEric
+//If you like this project, give it a star!
+//The code is written by C/C++, but Magicavoxel requires its format to be txt (so weird..).
+//Flood Shader for Magicavoxel
+//Command-line usage: 'xs flood [height] [color]' (Each parameter is required or the code won't work correctly.)
+//e.g. xs flood 60 169
+//GNU GPL v3 License
+float map(vec3 v){
+    float x = voxel(v);
+    if(v.z<iArgs[0]){
+        if(x!=0){
+            return x;
+        }
+        else{
+            return iArgs[1];
+        }
+    }
+    else if (x!=0){
+        return x;
+    }
+    else{
+        return 0;
+    }
+}
