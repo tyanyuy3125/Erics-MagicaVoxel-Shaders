@@ -1,0 +1,58 @@
+//Via Github@CodingEric
+//If you like this project, give it a star!
+//The code is written in C/C++, but Magicavoxel requires its format to be txt (so weird..).
+//Cube Fill Shader for Magicavoxel
+//Command-line usage:
+// 1) 'xs cubefill [point1_X] [point1_Y] [point1_Z] [point2_X] [point2_Y] [point2_Z] [voxel color]' (Each parameter is required or the code won't work correctly.)
+// 2) 'xs cubefill [pointX] [pointY] [pointZ] [length of a side] [voxel color]'
+//e.g.
+// 1) xs cubefill 1 1 1 7 2 2 216 - Fill a red cuboid between the coordinates (1,1,1) and (7,2,2).
+// 2) xs cubefill 50 50 50 10 216 - Take coordinates (50,50,50) as the center, create a red cube with a side length of 10 units.
+//GNU GPL v3 License
+float map(vec3 v){
+    if(iArgs[5]!=0.){
+        if((v.x>=iArgs[0]&&v.x<=iArgs[3]||v.x>=iArgs[3]&&v.x<=iArgs[0])&&(v.y>=iArgs[1]&&v.y<=iArgs[4]||v.y>=iArgs[4]&&v.y<=iArgs[1])&&(v.z>=iArgs[2]&&v.z<=iArgs[5]||v.z>=iArgs[5]&&v.z<=iArgs[2])){
+            return iArgs[6];
+        }
+        else{
+            return voxel(v);
+        }
+    }
+    else{
+        float cte;
+        float cte1=-1.;
+        float a3=iArgs[3];
+        float p1X;
+        float p1Y;
+        float p1Z;
+        float p2X;
+        float p2Y;
+        float p2Z;
+        if(int(a3)&1){
+            cte=(a3-1.)/2.;
+            cte1+=a3-cte;
+            p1X=iArgs[0]-cte;
+            p1Y=iArgs[1]-cte;
+            p1Z=iArgs[2]-cte;
+            p2X=iArgs[0]+cte1;
+            p2Y=iArgs[1]+cte1;
+            p2Z=iArgs[2]+cte1;
+        }
+        else{
+            cte=a3/2.;
+            cte1+=a3/2;
+            p1X=iArgs[0]-cte;
+            p1Y=iArgs[1]-cte;
+            p1Z=iArgs[2]-cte;
+            p2X=iArgs[0]+cte1;
+            p2Y=iArgs[1]+cte1;
+            p2Z=iArgs[2]+cte1;
+        }
+        if((v.x>=p1X&&v.x<=p2X||v.x>=p2X&&v.x<=p1X)&&(v.y>=p1Y&&v.y<=p2Y||v.y>=p2Y&&v.y<=p1Y)&&(v.z>=p1Z&&v.z<=p2Z||v.z>=p2Z&&v.z<=p1Z)){
+            return iArgs[4];
+        }
+        else{
+            return voxel(v);
+        }
+    }
+}
