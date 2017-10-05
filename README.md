@@ -2,7 +2,7 @@
 Shaders for MagicaVoxel including Terrain Generator, Flood System etc.
 
 ## 0x0 Project Info
-* Current version: `0.0.2.1`
+* Current version: `0.0.3`
 * Tested with MagicaVoxel 0.98.2 (Beta) for Windows
 * Released under GNU GPL v3
 * Language: `C\C++` ..ish
@@ -21,14 +21,15 @@ Just copy the .txt files from the `shader` directory in this project into the `s
 * Image preview:
 
   <img src="img/tg.png" width="250px"></img><img src="img/tg1.png" width="250px"></img>
-### DARKER
-* File name: `darker.txt`
-* Command-line usage: `xs darker`
->1. This shader requires you to set the palette id to 0.
->2. This shader is not designed for selected areas. (This may be improved in the future releases)
+### BLANKET
+* File name: `blanket.txt`
+* Command-line usage: `xs blanket [voxel-color]`
+* Command-line e.g.: `xs blanket 1`
+>The shader will only cover the areas that are not covered. (Like snow, including untouched)
 * Image preview:
 
-  <img src="img/d.png" width="150px"></img><img src="img/d1.png" width="150px"></img><img src="img/d2.png" width="150px"></img>
+  <img src="img/b.png" width="250px"></img>
+  <img src="img/b1.png" width="250px"></img>
 ### FLOOD
 * File name: `flood.txt`
 * Command-line usage: `xs flood [height] [color]`
@@ -46,5 +47,13 @@ Just copy the .txt files from the `shader` directory in this project into the `s
   1. `xs cubefill 1 1 1 7 2 2 216` - Fill a red cuboid between the coordinates (1,1,1) and (7,2,2).
   2. `xs cubefill 50 50 50 10 216` - Take coordinates (50,50,50) as the center, create a red cube with a side length of 10 units.
 >This shader will not empty your scene.
+### DARKER
+* File name: `darker.txt`
+* Command-line usage: `xs darker`
+>1. This shader requires you to set the palette id to 0.
+>2. This shader is not designed for selected areas. (This may be improved in the future releases)
+* Image preview:
+
+  <img src="img/d.png" width="150px"></img><img src="img/d1.png" width="150px"></img><img src="img/d2.png" width="150px"></img>
 
 

@@ -1,0 +1,42 @@
+//Via Github@CodingEric
+//If you like this project, give it a star!
+//The code is written in C/C++, but Magicavoxel requires its format to be txt (so weird..).
+//Blanket Shader for Magicavoxel
+//Command-line usage: 'xs blanket [voxel-color]' (Each parameter is required or the code won't work correctly.)
+//e.g. xs blanket 1
+//GNU GPL v3 License
+
+bool istop(vec3 v) {
+  vec3 vd=v;
+  vd.z=vd.z-1;
+  if(voxel(vd)!=0&&v.z!=0){
+    return true;
+  }
+  return false;
+}
+
+bool iscovered(vec3 v){
+  int toplayer=0;
+  int i;
+  for(i=v.z;i<int(iVolumeSize)-1;i++){
+    vec3 vt=v;
+    vt.z=float(i);
+    if(voxel(vt)!=0){
+      toplayer+=1;
+    }
+  }
+  if(toplayer!=0){
+    return true;
+  }
+  return false;
+}
+
+float map(vec3 v) {
+  if(istop(v)&&iscovered(v)==false){
+    return iArgs[0];
+  }
+  return voxel(v);
+}
+
+
+
