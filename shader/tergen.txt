@@ -3,8 +3,8 @@
 //The code is written in C/C++, but Magicavoxel requires its format to be txt (so weird..).
 //Terrain Generator Shader for Magicavoxel
 //Powered by Perlin Noise
-//Command-line usage: 'xs tergen [seed] [altitude] [noise-scale]' (Each parameter is required or the code won't work correctly.)
-//e.g. xs tergen 1248343 50 20
+//Command-line usage: 'xs tergen [seed] [altitude] [noise-scale] [voxel-color] [void-voxel-color (0 recommend)]' (Each parameter is required or the code won't work correctly.)
+//e.g. xs tergen 1248343 50 20 1 0
 //It is recommended that you set the scene size to 126x126x126 for the best view.
 //GNU GPL v3 License
 float noise(int x, int y){
@@ -60,9 +60,9 @@ float pernoi(float x, float y){
 float map(vec3 v) {
   float height = int(float(pernoi(float(v.x)/float(iArgs[2]),float(v.y)/float(iArgs[2]))*iArgs[1]));
   if(int(v.z)<=int(height)){
-    return 1;
+    return iArgs[3];
   }
-  return 0;
+  return iArgs[4];
 }
 
 
