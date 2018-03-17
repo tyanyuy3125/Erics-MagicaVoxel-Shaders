@@ -34,7 +34,7 @@ Just copy the .txt files from the `shader` directory in this project into the `s
 * File name: `flood.txt`
 * Command-line usage: `xs flood [height] [color]`
 * Command-line e.g.: `xs flood 60 169`
->This shader is not designed for selected areas. (This may be improved in the future releases)
+>This shader is not designed for the selected areas. (This may be improved in the future releases)
 * Image preview:
 
   <img src="img/f.png" width="250px"></img>
