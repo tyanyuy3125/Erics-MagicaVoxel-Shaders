@@ -2,7 +2,7 @@
 Shaders for MagicaVoxel including Terrain Generator, Flood System etc.
 
 ## 0x0 Project Info
-* Current version: `0.0.3.5`
+* Current version: `0.0.3`
 * Tested with MagicaVoxel 0.98.2 (Beta) for Windows
 * Released under GNU GPL v3
 * Language: `C\C++` ..ish
@@ -14,8 +14,8 @@ Just copy the .txt files from the `shader` directory in this project into the `s
 ### PERLIN NOISE TERRAIN GENERATOR
 * File name: `tergen.txt`
 * Command-line usage: `xs tergen [seed] [altitude] 
-[noise-scale] [voxel-color] [void-voxel-color] [vertical-shifting] [x-shifting] [y-shifting]`
-* Command-line e.g.: `xs tergen 1248343 50 20 1 0 -10 10 10`
+[noise-scale] [voxel-color] [void-voxel-color]`
+* Command-line e.g.: `xs tergen 1248343 50 20 1 0`
 >1. It is recommended that you set the scene size to 126x126x126 for the best view.
 >2. This shader will empty your scene.
 * Image preview:
