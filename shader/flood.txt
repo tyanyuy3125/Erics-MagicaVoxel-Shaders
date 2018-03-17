@@ -7,18 +7,5 @@
 //GNU GPL v3 License
 float map(vec3 v){
     float x = voxel(v);
-    if(v.z<iArgs[0]){
-        if(x!=0){
-            return x;
-        }
-        else{
-            return iArgs[1];
-        }
-    }
-    else if (x!=0){
-        return x;
-    }
-    else{
-        return 0;
-    }
+    return (v.z<iArgs[0])?((x!=0)?x:iArgs[1]):((x!=0)?x:0);
 }
