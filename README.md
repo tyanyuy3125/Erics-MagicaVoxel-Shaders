@@ -3,7 +3,7 @@ Shaders for MagicaVoxel including Terrain Generator, Flood System etc.
 
 ## 0x0 Project Info
 * Current version: `0.0.4.0`
-* Tested with MagicaVoxel 0.98.2 (Beta) for Windows
+* Tested with MagicaVoxel 0.99.1 for Windows
 * Released under GNU GPL v3
 * Language: `C\C++` ..ish
 
