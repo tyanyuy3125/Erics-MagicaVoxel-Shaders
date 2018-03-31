@@ -2,7 +2,7 @@
 Shaders for MagicaVoxel including Terrain Generator, Flood System etc.
 
 ## 0x0 Project Info
-* Current version: `0.0.3.5`
+* Current version: `0.0.4.0`
 * Tested with MagicaVoxel 0.98.2 (Beta) for Windows
 * Released under GNU GPL v3
 * Language: `C\C++` ..ish
@@ -17,19 +17,25 @@ Just copy the .txt files from the `shader` directory in this project into the `s
 [noise-scale] [voxel-color] [void-voxel-color] [vertical-shifting] [x-shifting] [y-shifting]`
 * Command-line e.g.: `xs tergen 1248343 50 20 1 0 -10 10 10`
 >1. It is recommended that you set the scene size to 126x126x126 for the best view.
->2. This shader will empty your scene.
+>2. ~~This shader will empty your scene.~~ Set void-voxel-color to -1 to not remove the original scene.
 * Image preview:
 
   <img src="img/tg.png" width="250px"></img><img src="img/tg1.png" width="250px"></img>
 ### BLANKET
 * File name: `blanket.txt`
-* Command-line usage: `xs blanket [voxel-color]`
-* Command-line e.g.: `xs blanket 1`
->The shader will only cover the areas that are not covered. (Like snow, including untouched)
+* Command-line usages: 
+  1. `xs blanket [voxel-color]`
+  2. `xs blanket [voxel-color] [noise-seed] [noise-scale] [threshold (0~2 recommend)]`
+* Command-line e.g.:
+  1. `xs blanket 1`
+  2. `xs blanket 1 1248343 20 1.4`
+>1. The shader will only cover the areas that are not covered. (Like snow)
+>2. Esp. if both Terrain Generator & Blanket Shader have the same noise seed as well as scale, and the xyz-shifting of the Terrain Generator is zero, the result of the two shaders mixed together will be like realistic snow cover of high mountains. (fig. 3)
 * Image preview:
 
   <img src="img/b.png" width="250px"></img>
   <img src="img/b1.png" width="250px"></img>
+  <img src="img/b2.png" width="250px"></img>
 ### FLOOD
 * File name: `flood.txt`
 * Command-line usage: `xs flood [height] [color]`

@@ -1,15 +1,31 @@
-//Via Github@CodingEric
-//If you like this project, give it a star!
-//The code is written in C/C++, but Magicavoxel requires its format to be txt (so weird..).
-//Blanket Shader for Magicavoxel
-//Command-line usage: 'xs blanket [voxel-color]' (Each parameter is required or the code won't work correctly.)
-//e.g. xs blanket 1
-//GNU GPL v3 License
+/*
+Via Github@CodingEric
+If you like this project, give it a star!
+The code is written in C/C++, but Magicavoxel requires its format to be txt (so weird..).
+Blanket Shader for Magicavoxel
+Command-line usage:
+1) 'xs blanket [voxel-color]'
+2) 'xs blanket [voxel-color] [noise-seed] [noise-scale] [threshold (0~2 recommend)]'
+(Each parameter is required or the code won't work correctly.)
+e.g.
+1) xs blanket 1
+2) xs blanket 1 1248343 20 1.4
+GNU GPL v3 License
+*/
+
+float noise(int x, int y){
+  x %= 25;
+  y %= 25;
+  int n = x + y * 57;
+  n = (n<<13) ^ n;
+  float o=1.0f-(float((n*(n*n*int(iArgs[1]) + 789221 ) + 1376312589 ) & 0xFFFFFFFF)/1073741824.0f);
+  return o;
+}
 
 bool istop(vec3 v) {
   vec3 vd=v;
   vd.z=vd.z-1;
-  if(voxel(vd)!=0&&v.z!=0){
+  if(voxel(vd)!=0&&v.z!=0&&int(v.z)!=int(iVolumeSize)-1){
     return true;
   }
   return false;
@@ -17,8 +33,7 @@ bool istop(vec3 v) {
 
 bool iscovered(vec3 v){
   int toplayer=0;
-  int i;
-  for(i=v.z;i<int(iVolumeSize)-1;i++){
+  for(int i=int(v.z);i<int(iVolumeSize)-1;i++){
     vec3 vt=v;
     vt.z=float(i);
     if(voxel(vt)!=0){
@@ -31,11 +46,50 @@ bool iscovered(vec3 v){
   return false;
 }
 
-float map(vec3 v) {
-  if(istop(v)&&iscovered(v)==false){
-    return iArgs[0];
+float snoise(int x, int y){
+  float co = (noise(x-1,y-1)+noise(x+1,y-1)+noise(x-1,y+1)+noise(x+1,y+1))/16.0f;
+  float si = (noise(x-1,y)+noise(x+1,y)+noise(x,y-1)+noise(x,y+1))/8.0f;
+  float ce = noise(x,y)/4.0f;
+  return co+si+ce;
+}
+
+float cosini(float a, float b, float x){
+  float f=(1-cos(x*3.1415927))*0.5f;
+  return a*(1-f)+b*f;
+}
+
+float inno(float x, float y){
+  int intX=int(x);
+  float fraX=x-intX;
+  int intY=int(y);
+  float fraY=y-intY;
+  float i1=cosini(snoise(intX,intY),snoise(intX+1,intY),fraX);
+  float i2=cosini(snoise(intX,intY+1),snoise(intX+1,intY+1),fraX);
+  return cosini(i1,i2,fraY);
+}
+
+float pernoi(float x, float y){
+  float total=0.;
+  for(int i=0;i<=20;i++){
+    float freq=pow(float(2),i);
+    total+=inno(x*freq,y*freq)*pow(0.45f,i);
   }
-  return voxel(v);
+  return total;
+}
+
+float map(vec3 v) {
+  if(iArgs[1]==0){
+    if(istop(v)&&iscovered(v)==false){
+      return iArgs[0];
+    }
+    return voxel(v);
+  }
+  else{
+    if(istop(v)&&iscovered(v)==false&&pernoi(v.x/iArgs[2],v.y/iArgs[2])>iArgs[3]){
+      return iArgs[0];
+    }
+    return voxel(v);
+  }
 }
 
 
