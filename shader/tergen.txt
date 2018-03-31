@@ -7,7 +7,7 @@ Command-line usage: 'xs tergen [seed] [altitude] [noise-scale] [voxel-color] [vo
 e.g. xs tergen 1248343 50 20 1 0 -10 10 10
 Limited by the noise algorithm, the x-y shifting process only gets the abs of input value.
 It is recommended that you set the scene size to 126x126x126 for the best view.
-GNU GPL v3 License
+MIT License
 */
 
 float noise(int x, int y){

@@ -10,7 +10,7 @@ Command-line usage:
 e.g.
 1) xs blanket 1
 2) xs blanket 1 1248343 20 1.4
-GNU GPL v3 License
+MIT License
 */
 
 float noise(int x, int y){

@@ -10,7 +10,7 @@ Command-line usage:
 e.g.
  1) xs cubefill 1 1 1 7 2 2 216 - Fill a red cuboid between the coordinates (1,1,1) and (7,2,2).
  2) xs cubefill 50 50 50 10 216 - Take coordinates (50,50,50) as the center, create a red cube with a side length of 10 units.
-GNU GPL v3 License
+MIT License
 */
 float map(vec3 v){
     if(iArgs[5]!=0.){
