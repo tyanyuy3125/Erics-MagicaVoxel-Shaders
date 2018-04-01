@@ -2,7 +2,7 @@
 Shaders for MagicaVoxel including Terrain Generator, Flood System etc.
 
 ## 0x0 Project Info
-* Current version: `0.0.4.0`
+* Current version: `0.0.4.5`
 * Tested with MagicaVoxel 0.99.1 for Windows
 * Released under MIT License
 * Language: `C\C++` ..ish
@@ -18,9 +18,11 @@ Just copy the .txt files from the `shader` directory in this project into the `s
 * Command-line e.g.: `xs tergen 1248343 50 20 1 0 -10 10 10`
 >1. It is recommended that you set the scene size to 126x126x126 for the best view.
 >2. ~~This shader will empty your scene.~~ Set void-voxel-color to -1 to not remove the original scene.
+>3. By using the xyz-shifting of the shader & the new *world* system of MagicaVoxel 0.99.x, you'll be able to create a large terrain map. (fig. 3)
 * Image preview:
 
   <img src="img/tg.png" width="250px"></img><img src="img/tg1.png" width="250px"></img>
+  <img src="img/tg2.png" width="250px"></img>
 ### BLANKET
 * File name: `blanket.txt`
 * Command-line usages: 
@@ -36,6 +38,18 @@ Just copy the .txt files from the `shader` directory in this project into the `s
   <img src="img/b.png" width="250px"></img>
   <img src="img/b1.png" width="250px"></img>
   <img src="img/b2.png" width="250px"></img>
+### CUBE FILL
+* File name: `cubefill.txt`
+* Command-line usages:
+  1. `xs cubefill [mode (0 for filling, 1 for frame)] [point1_X] [point1_Y] [point1_Z] [point2_X] [point2_Y] [point2_Z] [voxel color]`
+  2. `xs cubefill [mode (0 for filling, 1 for frame)] [pointX] [pointY] [pointZ] [length of a side] [voxel color]`
+* Command-line e.g.:
+  1. `xs cubefill 1 1 1 1 7 2 2 216` - Draw the edge frame of a red cuboid between the coordinates (1,1,1) and (7,2,2).
+  2. `xs cubefill 0 50 50 50 10 216` - Take coordinates (50,50,50) as the center, create a red cube with a side length of 10 units.
+* Image preview:
+
+  <img src="img/cf.png" width="250px"></img>
+>This shader will not empty your scene.
 ### FLOOD
 * File name: `flood.txt`
 * Command-line usage: `xs flood [height] [color]`
@@ -44,15 +58,6 @@ Just copy the .txt files from the `shader` directory in this project into the `s
 * Image preview:
 
   <img src="img/f.png" width="250px"></img>
-### CUBE FILL
-* File name: `cubefill.txt`
-* Command-line usages:
-  1. `xs cubefill [point1_X] [point1_Y] [point1_Z] [point2_X] [point2_Y] [point2_Z] [voxel color]`
-  2. `xs cubefill [pointX] [pointY] [pointZ] [length of a side] [voxel color]`
-* Command-line e.g.:
-  1. `xs cubefill 1 1 1 7 2 2 216` - Fill a red cuboid between the coordinates (1,1,1) and (7,2,2).
-  2. `xs cubefill 50 50 50 10 216` - Take coordinates (50,50,50) as the center, create a red cube with a side length of 10 units.
->This shader will not empty your scene.
 ### DARKER
 * File name: `darker.txt`
 * Command-line usage: `xs darker`
