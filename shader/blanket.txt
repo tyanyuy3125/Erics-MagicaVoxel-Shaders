@@ -1,7 +1,7 @@
 /*
 Via Github@CodingEric
 If you like this project, give it a star!
-The code is written in C/C++, but Magicavoxel requires its format to be txt (so weird..).
+The code is written in C, but Magicavoxel requires its format to be txt (so weird..).
 Blanket Shader for Magicavoxel
 Command-line usage:
 1) 'xs blanket [voxel-color]'

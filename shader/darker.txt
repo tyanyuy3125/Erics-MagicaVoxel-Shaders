@@ -1,10 +1,13 @@
-//Via Github@CodingEric
-//If you like this project, give it a star!
-//The code is written in C/C++, but Magicavoxel requires its format to be txt (so weird..).
-//A shader which is able to make the color darker for Magicavoxel
-//Command-line usage: 'xs darker'
-//WARNING: This shader requires you to set the palette id to 0.
-//MIT License
+/*
+Via Github@CodingEric
+If you like this project, give it a star!
+The code is written in C, but Magicavoxel requires its format to be txt (so weird..).
+A shader which is able to make the color darker for Magicavoxel
+Command-line usage: 'xs darker'
+WARNING: This shader requires you to set the palette id to 0.
+MIT License
+*/
+
 float map(vec3 v){
     if(voxel(v)==0){
         return 0;

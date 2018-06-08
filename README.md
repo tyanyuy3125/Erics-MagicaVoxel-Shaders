@@ -1,16 +1,16 @@
-# Eric's MagicaVoxel Shaders Collection
-Shaders for MagicaVoxel including Terrain Generator, Flood System etc.
+# Eric's MagicaVoxel Shaders
+Shaders for MagicaVoxel including Terrain Generator, Advanced Flood System etc.
 
-## 0x0 Project Info
-* Current version: `0.0.4.5`
+## Project Info
+* Current version: `0.0.5.0`
 * Tested with MagicaVoxel 0.99.1 for Windows
 * Released under MIT License
-* Language: `C\C++` ..ish
+* Language: `C`
 
-## 0x1 Installation
-Just copy the .txt files from the `shader` directory in this project into the `shader` directory of your MagicaVoxel installation.
+## Installation
+Copy the .txt files from the `shader` directory in this project to the `shader` directory of your MagicaVoxel installation.
 
-## 0x2 Shaders and usages
+## Shaders and usages
 ### PERLIN NOISE TERRAIN GENERATOR
 * File name: `tergen.txt`
 * Command-line usage: `xs tergen [seed] [altitude] 
@@ -23,6 +23,19 @@ Just copy the .txt files from the `shader` directory in this project into the `s
 
   <img src="img/tg.png" width="250px"></img><img src="img/tg1.png" width="250px"></img>
   <img src="img/tg2.png" width="250px"></img>
+### HYPERFLODD
+>Unlike the classic flood shader, this shader provides a solution for closed water area.
+* File name: `hyperflood.txt`
+* Command-line usage: `xs hyperflood [x] [y] [z]` (The parameters represent the coordinate of the water source.)
+* Command-line e.g.: `xs hyperflood 3 5 3`
+>1. The color of water is controlled by selected color in the palette.
+>2. DANGER - READ BEFORE USE
+<br>- THE SHADER ONLY SUPPORTS SCENES WITH LESS THAN 40 UNITS OF XYZ-VOLUMESIZE. (You can change line 17 to remove the limit, but think over first.)
+<br>- LIMITED BY THE INNER EXPLAINATOR OF MAGICAVOXEL, THE SHADER IS NOT STABLE. IF THE FILLING SPACE IS TOO LARGE, MAGICAVOXEL MAY CRASH.
+<br>- SO CAREFULLY USE THIS SHADER IN SMALL SCENE PLEASE.
+* Image preview:
+
+  <img src="img/h.png"></img>
 ### BLANKET
 * File name: `blanket.txt`
 * Command-line usages: 

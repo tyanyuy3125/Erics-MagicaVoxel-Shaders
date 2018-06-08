@@ -1,7 +1,7 @@
 /*
 Via Github@CodingEric
 If you like this project, give it a star!
-The code is written in C/C++, but Magicavoxel requires its format to be txt (so weird..).
+The code is written in C, but Magicavoxel requires its format to be txt (so weird..).
 Cube Fill Shader for Magicavoxel
 Command-line usage:
  1) 'xs cubefill [mode (0 for filling, 1 for frame)] [point1_X] [point1_Y] [point1_Z] [point2_X] [point2_Y] [point2_Z] [voxel color]'
@@ -12,6 +12,7 @@ e.g.
  2) xs cubefill 0 50 50 50 10 216 - Take coordinates (50,50,50) as the center, create a red cube with a side length of 10 units.
 MIT License
 */
+
 float map(vec3 v){
     if(iArgs[6]!=0.){
         if(iArgs[0]==0&&((v.x>=iArgs[1]&&v.x<=iArgs[4]||v.x>=iArgs[4]&&v.x<=iArgs[1])&&(v.y>=iArgs[2]&&v.y<=iArgs[5]||v.y>=iArgs[5]&&v.y<=iArgs[2])&&(v.z>=iArgs[3]&&v.z<=iArgs[6]||v.z>=iArgs[6]&&v.z<=iArgs[3]))){

@@ -1,0 +1,70 @@
+/*
+Via Github@CodingEric
+If you like this project, give it a star!
+The code is written in C, but Magicavoxel requires its format to be txt (so weird..).
+Advanced Flood Shader for Magicavoxel
+Command-line usage: 'xs hyperflood [x] [y] [z]' (The parameters stand for the coordinate of water source. Each parameter is required or the code won't work correctly.)
+e.g. xs hyperflood 3 5 3
+
+DANGER - READ BEFORE USE
+THE SHADER ONLY SUPPORTS SCENES WITH LESS THAN 40 UNITS OF XYZ-VOLUMESIZE (You can change line 17 to remove the limit, but it's dangerous)
+LIMITED BY THE INNER EXPLAINATOR OF MAGICAVOXEL, THE SHADER IS NOT STABLE
+IF THE FILLING SPACE IS TOO LARGE, MAGICAVOXEL MAY CRASH
+SO CAREFULLY USE THIS SHADER IN SMALL SCENE PLEASE
+
+MIT License
+*/
+
+int digMap[40*40*40]; //this controls the scene's size limit (x*y*z)
+void writeMap(int x,int y,int z,int data){
+    int currentLocation=z*int(iVolumeSize.z)*int(iVolumeSize.z)+y*int(iVolumeSize.y)+x;
+    digMap[currentLocation]=data;
+}
+
+int readMap(int x,int y,int z){
+    int currentLocation=z*int(iVolumeSize.z)*int(iVolumeSize.z)+y*int(iVolumeSize.y)+x;
+    return digMap[currentLocation];
+}
+
+float bfs(float x,float y,float z,vec3 selct){
+    vec3 sourceVec=vec3(x,y,z);
+    if(voxel(sourceVec)!=0.||voxel(selct)!=0.||selct.z>z){
+        return voxel(selct);
+    }
+    for(int i=0;i<int(iVolumeSize.x);i++){
+        for(int j=0;j<int(iVolumeSize.y);j++){
+            for(int k=0;k<int(z+1);k++){
+                int _data;
+                vec3 tempVec=vec3(i,j,k);
+                if(i==int(x)&&j==int(y)&&k==int(z))_data=-1;
+                else if(voxel(tempVec)!=0.)_data=1;
+                else _data=0;
+                writeMap(i,j,k,_data);
+            }
+        }
+    }
+    for(int i=0;i<5;i++){
+    for(int i=0;i<int(iVolumeSize.x);i++){
+        for(int j=0;j<int(iVolumeSize.y);j++){
+            for(int k=0;k<int(z+1);k++){
+                if(readMap(i,j,k)==-1){
+                    if(i>0&&readMap(i-1,j,k)!=1&&readMap(i-1,j,k)!=-1)writeMap(i-1,j,k,-1);
+                    if(i<int(iVolumeSize.x)-1&&readMap(i+1,j,k)!=1&&readMap(i+1,j,k)!=-1)writeMap(i+1,j,k,-1);
+                    if(j>0&&readMap(i,j-1,k)!=1&&readMap(i,j-1,k)!=-1)writeMap(i,j-1,k,-1);
+                    if(j<int(iVolumeSize.y)-1&&readMap(i,j+1,k)!=1&&readMap(i,j+1,k)!=-1)writeMap(i,j+1,k,-1);
+                    if(k>0&&readMap(i,j,k-1)!=1&&readMap(i,j,k-1)!=-1)writeMap(i,j,k-1,-1);
+                    if(k<int(z)-1&&readMap(i,j,k+1)!=1&&readMap(i,j,k+1)!=-1)writeMap(i,j,k+1,-1);
+                }
+            }
+        }
+    }
+    }
+    if(readMap(int(selct.x),int(selct.y),int(selct.z))==-1){
+        return iColorIndex;
+    }
+    return voxel(selct);
+}
+
+float map(vec3 v){
+    return bfs(iArgs[0],iArgs[1],iArgs[2],v);
+}
