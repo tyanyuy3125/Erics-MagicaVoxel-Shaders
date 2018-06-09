@@ -1,7 +1,7 @@
 /*
 Via Github@CodingEric
 If you like this project, give it a star!
-The code is written in C, but Magicavoxel requires its format to be txt (so weird..).
+GL Shading Language.
 Advanced Flood Shader for Magicavoxel
 Command-line usage: 'xs hyperflood [x] [y] [z]' (The parameters stand for the coordinate of water source. Each parameter is required or the code won't work correctly.)
 e.g. xs hyperflood 3 5 3

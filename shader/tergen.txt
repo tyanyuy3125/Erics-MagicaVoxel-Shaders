@@ -1,7 +1,7 @@
 /*
 Via Github@CodingEric
 If you like this project, give it a star!
-The code is written in C, but Magicavoxel requires its format to be txt (so weird..).
+GL Shading Language.
 Terrain Generator Shader for Magicavoxel
 Command-line usage: 'xs tergen [seed] [altitude] [noise-scale] [voxel-color] [void-voxel-color (-1 for not emptying the scene)] [vertical-shifting (signed int)] [x-shifting] [y-shifting]' (Each parameter is required or the code won't work correctly.)
 e.g. xs tergen 1248343 50 20 1 0 -10 10 10

@@ -1,7 +1,7 @@
 /*
 Via Github@CodingEric
 If you like this project, give it a star!
-The code is written in C, but Magicavoxel requires its format to be txt (so weird..).
+GL Shading Language.
 A shader which is able to make the color darker for Magicavoxel
 Command-line usage: 'xs darker'
 WARNING: This shader requires you to set the palette id to 0.

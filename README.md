@@ -2,10 +2,10 @@
 Shaders for MagicaVoxel including Terrain Generator, Advanced Flood System etc.
 
 ## Project Info
-* Current version: `0.0.5.0`
+* Current version: `0.0.5.1`
 * Tested with MagicaVoxel 0.99.1 for Windows
 * Released under MIT License
-* Language: `C`
+* Language: `GLSL`
 
 ## Installation
 Copy the .txt files from the `shader` directory in this project to the `shader` directory of your MagicaVoxel installation.

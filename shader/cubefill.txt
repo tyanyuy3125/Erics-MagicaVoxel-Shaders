@@ -1,7 +1,7 @@
 /*
 Via Github@CodingEric
 If you like this project, give it a star!
-The code is written in C, but Magicavoxel requires its format to be txt (so weird..).
+GL Shading Language.
 Cube Fill Shader for Magicavoxel
 Command-line usage:
  1) 'xs cubefill [mode (0 for filling, 1 for frame)] [point1_X] [point1_Y] [point1_Z] [point2_X] [point2_Y] [point2_Z] [voxel color]'
