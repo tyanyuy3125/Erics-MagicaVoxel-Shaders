@@ -11,11 +11,21 @@ Shaders for MagicaVoxel including Terrain Generator, Advanced Flood System etc.
 Copy the .txt files from the `shader` directory in this project to the `shader` directory of your MagicaVoxel installation.
 
 ## Shaders and usages
-### PERLIN NOISE TERRAIN GENERATOR
+>Note: The parameters with `<>` can be ignored. Mostly, they are set to 0 as default.
+### INDEX
+* <a href="#terrain-generator">Terrain generator</a>
+* <a href="#hyperflood">[Unstable] Hyperflood</a>
+* <a href="#blanket">Blanket</a>
+* <a href="#cube-filling">Cube filling</a>
+* <a href="#flood">Flood</a>
+* <a href="#darker">Darker</a>
+### TERRAIN GENERATOR
+<a href="#index">back to index</a>
 * File name: `tergen.txt`
 * Command-line usage: `xs tergen [seed] [altitude] 
-[noise-scale] [voxel-color] [void-voxel-color] [vertical-shifting] [x-shifting] [y-shifting]`
-* Command-line e.g.: `xs tergen 1248343 50 20 1 0 -10 10 10`
+[noise-scale] [voxel-color] <void-voxel-color> <vertical-shifting> <x-shifting> <y-shifting>`
+* Command-line e.g.: `xs tergen 19260817 50 20 1 0 -10 10 10`
+* Minimal edition e.g.: `xs tergen 19260817 50 20 1`
 >1. It is recommended that you set the scene size to 126x126x126 for the best view.
 >2. ~~This shader will empty your scene.~~ Set void-voxel-color to -1 to not remove the original scene.
 >3. By using the xyz-shifting of the shader & the new *world* system of MagicaVoxel 0.99.x, you'll be able to create a large terrain map. (fig. 3)
@@ -23,7 +33,10 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 
   <img src="img/tg.png" width="250px"></img><img src="img/tg1.png" width="250px"></img>
   <img src="img/tg2.png" width="250px"></img>
-### HYPERFLODD
+### HYPERFLOOD
+<a href="#index">back to index</a>
+>**UNSTABLE. DO NOT USE.**
+
 >Unlike the classic flood shader, this shader provides a solution for closed water area.
 * File name: `hyperflood.txt`
 * Command-line usage: `xs hyperflood [x] [y] [z]` (The parameters represent the coordinate of the water source.)
@@ -32,18 +45,16 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 >2. DANGER - READ BEFORE USE
 <br>- THE SHADER ONLY SUPPORTS SCENES WITH LESS THAN 40 UNITS OF XYZ-VOLUMESIZE. (You can change line 17 to remove the limit, but think over first.)
 <br>- LIMITED BY THE INNER EXPLAINATOR OF MAGICAVOXEL, THE SHADER IS NOT STABLE. IF THE FILLING SPACE IS TOO LARGE, MAGICAVOXEL MAY CRASH.
-<br>- SO CAREFULLY USE THIS SHADER IN SMALL SCENE PLEASE.
 * Image preview:
 
   <img src="img/h.png"></img>
 ### BLANKET
+<a href="#index">back to index</a>
 * File name: `blanket.txt`
 * Command-line usages: 
-  1. `xs blanket [voxel-color]`
-  2. `xs blanket [voxel-color] [noise-seed] [noise-scale] [threshold (0~2 recommend)]`
-* Command-line e.g.:
-  1. `xs blanket 1`
-  2. `xs blanket 1 1248343 20 1.4`
+  `xs blanket [voxel-color] <noise-seed> <noise-scale> <threshold (0~2 recommend)>`
+* Command-line e.g.: `xs blanket 1 1248343 20 1.4`
+* Minimal edition e.g.: `xs blanket 1`
 >1. The shader will only cover the areas that are not covered. (Like snow)
 >2. Esp. if both Terrain Generator & Blanket Shader have the same noise seed as well as scale, and the xyz-shifting of the Terrain Generator is zero, the result of the two shaders mixed together will be like realistic snow cover of high mountains. (fig. 3)
 * Image preview:
@@ -51,7 +62,8 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
   <img src="img/b.png" width="250px"></img>
   <img src="img/b1.png" width="250px"></img>
   <img src="img/b2.png" width="250px"></img>
-### CUBE FILL
+### CUBE FILLING
+<a href="#index">back to index</a>
 * File name: `cubefill.txt`
 * Command-line usages:
   1. `xs cubefill [mode (0 for filling, 1 for frame)] [point1_X] [point1_Y] [point1_Z] [point2_X] [point2_Y] [point2_Z] [voxel color]`
@@ -64,6 +76,7 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
   <img src="img/cf.png" width="250px"></img>
 >This shader will not empty your scene.
 ### FLOOD
+<a href="#index">back to index</a>
 * File name: `flood.txt`
 * Command-line usage: `xs flood [height] [color]`
 * Command-line e.g.: `xs flood 60 169`
@@ -72,6 +85,7 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 
   <img src="img/f.png" width="250px"></img>
 ### DARKER
+<a href="#index">back to index</a>
 * File name: `darker.txt`
 * Command-line usage: `xs darker`
 >1. This shader requires you to set the palette id to 0.
