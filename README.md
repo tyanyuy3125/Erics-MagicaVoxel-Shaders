@@ -14,6 +14,7 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 >Note: The parameters with `<>` can be ignored. Mostly, they are set to 0 as default.
 ### INDEX
 * <a href="#terrain-generator">Terrain generator</a>
+* <a href="#flow">Flow</a>
 * <a href="#hyperflood">[Unstable] Hyperflood</a>
 * <a href="#blanket">Blanket</a>
 * <a href="#cube-filling">Cube filling</a>
@@ -33,6 +34,15 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 
   <img src="img/tg.png" width="250px"></img><img src="img/tg1.png" width="250px"></img>
   <img src="img/tg2.png" width="250px"></img>
+### FLOW
+<a href="#index">back to index</a>
+> This shader emulates the waterflow mechanics in the nature.
+* File name: `flow.txt`
+* Command-line usage: `xs flow [color-index]`
+* Command-line e.g.: `xs flow 1`
+> The voxels with given index are water source, the shader would not automatically create them, you must attach them first.
+* Image preview:
+  <img src="img/flowShader.png"></img>
 ### HYPERFLOOD
 <a href="#index">back to index</a>
 >**UNSTABLE. DO NOT USE.**
