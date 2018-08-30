@@ -15,6 +15,7 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 ### INDEX
 * <a href="#terrain-generator">Terrain generator</a>
 * <a href="#flow">Flow</a>
+* <a href="#flow2">Flow2</a>
 * <a href="#hyperflood">[Unstable] Hyperflood</a>
 * <a href="#blanket">Blanket</a>
 * <a href="#cube-filling">Cube filling</a>
@@ -42,10 +43,22 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 * Command-line e.g.: `xs flow 1`
 > The voxels with given index are water source, the shader would not automatically create them, you must attach them first.
 * Image preview:
+
   <img src="img/flowShader.png"></img>
+### FLOW2
+<a href="#index">back to index</a>
+> In fact, it's a replacement of the unstable `hyperflood` shader.<br/>In the fig.2 of preview section, you can see the shader does provide a solution for the closed areas.
+* File name: `flow2.txt`
+* Command-line usage: `xs flow2 [color-index]`
+* Command-line e.g.: `xs flow2 1`
+> The voxels with given index are water source, the shader would not automatically create them, you must attach them first.
+* Image preview:
+
+  <img width="250px" src="img/flow2_1.png"></img>
+  <img width="250px" src="img/flow2_2.png"></img>
 ### HYPERFLOOD
 <a href="#index">back to index</a>
->**UNSTABLE. DO NOT USE.**
+>**UNSTABLE. DO NOT USE.<br>GO TO FLOW2 INSTEAD.**
 
 >Unlike the classic flood shader, this shader provides a solution for closed water area.
 * File name: `hyperflood.txt`
