@@ -1,0 +1,26 @@
+/*
+Via Github@CodingEric
+If you like this project, give it a star!
+GL Shading Language.
+Lifegame Shader for Magicavoxel
+Command-line usage: 'xs lifegame [color-index]'
+e.g. xs lifegame 1
+MIT License
+*/
+
+int dx[8]={-1,-1,-1,0,0,1,1,1};
+int dy[8]={1,0,-1,1,-1,1,0,-1};
+
+int scan(vec3 v){
+    int cnt=0;
+    for(int i=0;i<8;i++){
+        if(voxel(vec3(v.x+dx[i],v.y+dy[i],v.z))==iArgs[0])cnt++;
+    }
+    return cnt;
+}
+
+float map(vec3 v){
+    if(scan(v)==3)return iArgs[0];
+    if(scan(v)==2)return voxel(v);
+    return 0;
+}

@@ -2,9 +2,10 @@
 Shaders for MagicaVoxel including Terrain Generator, Advanced Flood System etc.
 
 ## Project Info
-* Current version: `0.0.6.0`
-* Tested with MagicaVoxel 0.99.1 for Windows
-* Released under MIT License
+* Current version: `0.0.7.0`
+* State: `LTS`
+* Tested with `MagicaVoxel 0.99.1 for Windows`
+* Released under `MIT License`
 * Language: `GLSL`
 
 ## Installation
@@ -17,6 +18,7 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 * <a href="#flow">Flow</a>
 * <a href="#flow2">Flow2</a>
 * <a href="#hyperflood">[Unstable] Hyperflood</a>
+* <a href="#life-game">Life game</a>
 * <a href="#blanket">Blanket</a>
 * <a href="#cube-filling">Cube filling</a>
 * <a href="#flood">Flood</a>
@@ -71,6 +73,17 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 * Image preview:
 
   <img src="img/h.png"></img>
+### LIFE GAME
+<a href="#index">back to index</a>
+* File name: `lifegame.txt`
+* Command-line usage: `xs lifegame [color-index]`
+* Command-line e.g.: `xs lifegame 1`
+> Designed for x-y plane. Use single color in your scene, or the shader will destroy it.
+* Image preview:
+
+  <img src="img/l1.png" width="250px"></img>
+  <img src="img/l2.png" width="250px"></img>
+  <img src="img/l3.png" width="250px"></img>
 ### BLANKET
 <a href="#index">back to index</a>
 * File name: `blanket.txt`
