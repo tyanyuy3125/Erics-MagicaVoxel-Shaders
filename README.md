@@ -11,6 +11,14 @@ Shaders for MagicaVoxel including Terrain Generator, Advanced Flood System etc.
 ## Installation
 Copy the .txt files from the `shader` directory in this project to the `shader` directory of your MagicaVoxel installation.
 
+## Compatibility
+| Version | Is compatible | Note |
+| ------ | :------: | ------ |
+| 0.98.2 | √ | No world system supported |
+| 0.99 | √ | |
+| 0.99.1 | √ | |
+| 0.99.2 | √ | |
+
 ## Shaders and usages
 >Note: The parameters with `<>` can be ignored. Mostly, they are set to 0 as default.
 ### INDEX
