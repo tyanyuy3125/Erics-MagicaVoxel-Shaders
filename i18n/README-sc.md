@@ -27,7 +27,7 @@
 
 ## Shader们和使用方法
 >注意: 具有 `<>` 的参数可以被忽略。多数时候，他们被默认设置为0。
-### 目录
+### <p id="index">目录</p>
 * <a href="#terrain-generator">Terrain generator</a>
 * <a href="#flow">Flow</a>
 * <a href="#flow2">Flow2</a>
@@ -73,11 +73,11 @@
   <img width="250px" src="../img/flow2_2.png"></img>
 ### HYPERFLOOD
 <a href="#index">回到目录</a>
->*不稳定<br>请使用FLOW2**
+>**不稳定<br>请使用FLOW2**
 
 >与经典flood着色器不同，本shader提供了一个闭合水区的解决方案。
 * 文件名称: `hyperflood.txt`
-* 命令行用法: `xs hyperflood [x] [y] [z]` (参数知识了水源坐标)
+* 命令行用法: `xs hyperflood [x] [y] [z]` (参数指示了水源坐标)
 * 命令行用法示例: `xs hyperflood 3 5 3`
 >1. 水的颜色受到调色板控制
 >2. 危险 - 用前读我

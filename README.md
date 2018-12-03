@@ -2,7 +2,8 @@
 Shaders for MagicaVoxel including Terrain Generator, Advanced Flood System etc.
 
 ## Internationalization
-<a href="./i18n/README-sc.md">简体中文</a> - translated by <a href="http://github.com/codingeric">CODINGERIC</a>
+- <a href="./i18n/README-sc.md">简体中文</a> - translated by <a href="http://github.com/codingeric">CodingEric</a>
+- <a href="./i18n/README-fr.md">Français</a> - translated by <a href="http://moiscript.weebly.com/magicavoxel.html">Pilou</a> - Authorized reproduce
 
 ## Project Info
 * Current version: `0.0.7.0`
