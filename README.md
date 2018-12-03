@@ -1,6 +1,9 @@
 # Eric's MagicaVoxel Shaders
 Shaders for MagicaVoxel including Terrain Generator, Advanced Flood System etc.
 
+## Internationalization
+<a href="./i18n/README-sc.md">简体中文</a> - translated by <a href="http://github.com/codingeric">CODINGERIC</a>
+
 ## Project Info
 * Current version: `0.0.7.0`
 * State: `LTS`
@@ -12,6 +15,8 @@ Shaders for MagicaVoxel including Terrain Generator, Advanced Flood System etc.
 Copy the .txt files from the `shader` directory in this project to the `shader` directory of your MagicaVoxel installation.
 
 ## Compatibility
+>Notice: The compatibility issue in older GLSL versions will be think of as bugs, please post them in the issues of the project.
+
 | Version | Is compatible | Note |
 | ------ | :------: | ------ |
 | 0.98.2 | √ | No world system supported |
@@ -124,7 +129,7 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 * File name: `flood.txt`
 * Command-line usage: `xs flood [height] [color]`
 * Command-line e.g.: `xs flood 60 169`
->This shader is not designed for selected areas. (This may be improved in the future releases)
+>This shader is not designed for selected areas. 
 * Image preview:
 
   <img src="img/f.png" width="250px"></img>
@@ -133,7 +138,7 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 * File name: `darker.txt`
 * Command-line usage: `xs darker`
 >1. This shader requires you to set the palette id to 0.
->2. This shader is not designed for selected areas. (This may be improved in the future releases)
+>2. This shader is not designed for selected areas. 
 * Image preview:
 
   <img src="img/d.png" width="150px"></img><img src="img/d1.png" width="150px"></img><img src="img/d2.png" width="150px"></img>
