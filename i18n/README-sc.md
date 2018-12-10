@@ -21,16 +21,17 @@
 | 版本 | 是否兼容 | 附注 |
 | ------ | :------: | ------ |
 | 0.98.2 | √ | 不支持世界系统 |
-| 0.99 | √ | |
-| 0.99.1 | √ | |
+| 0.99 | √ | 无法在指令栏显示调色板 |
+| 0.99.1 | √ | 无法在指令栏显示调色板 |
 | 0.99.2 | √ | |
 
 ## Shader们和使用方法
->注意: 具有 `<>` 的参数可以被忽略。多数时候，他们被默认设置为0。
+>**注意** <br> - 具有 `<>` 的参数可以被忽略。多数时候，他们被默认设置为0。<br> - 除非特别说明，Shader们不支持选择区域处理。
 ### <p id="index">目录</p>
 * <a href="#terrain-generator">Terrain generator</a>
 * <a href="#flow">Flow</a>
 * <a href="#flow2">Flow2</a>
+* <a href="#project">Project</a>
 * <a href="#hyperflood">[Unstable] Hyperflood</a>
 * <a href="#life-game">Life game</a>
 * <a href="#blanket">Blanket</a>
@@ -71,6 +72,19 @@
 
   <img width="250px" src="../img/flow2_1.png"></img>
   <img width="250px" src="../img/flow2_2.png"></img>
+
+### PROJECT
+<a href="#index">回到目录</a>
+>把给定 x-y 平面的颜色投射到其下方的表面上。
+* 文件名称: `project.txt`
+* 命令行用法: `xs project [height]`
+* 命令行用法示例: `xs project 64`
+>
+* 图片预览:
+
+  <img width="250px" src="../img/pro.png"></img>
+  <img width="250px" src="../img/pro1.png"></img>
+
 ### HYPERFLOOD
 <a href="#index">回到目录</a>
 >**不稳定<br>请使用FLOW2**
@@ -128,7 +142,7 @@
 * 文件名称: `flood.txt`
 * 命令行用法: `xs flood [height] [color]`
 * 命令行用法示例: `xs flood 60 169`
->本Shader不为选择区域设计
+>
 * 图片预览:
 
   <img src="../img/f.png" width="250px"></img>
@@ -136,8 +150,7 @@
 <a href="#index">回到目录</a>
 * 文件名称: `darker.txt`
 * 命令行用法: `xs darker`
->1. 本Shader要求您使用默认调色板0
->2. 本Shader不为选择区域设计
+>本Shader要求您使用默认调色板0
 * 图片预览:
 
   <img src="../img/d.png" width="150px"></img><img src="../img/d1.png" width="150px"></img><img src="../img/d2.png" width="150px"></img>

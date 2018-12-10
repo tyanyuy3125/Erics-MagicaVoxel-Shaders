@@ -21,16 +21,17 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 | Version | Is compatible | Note |
 | ------ | :------: | ------ |
 | 0.98.2 | √ | No world system supported |
-| 0.99 | √ | |
-| 0.99.1 | √ | |
+| 0.99 | √ | Cannot show color id in the command panel |
+| 0.99.1 | √ | Cannot show color id in the command panel |
 | 0.99.2 | √ | |
 
 ## Shaders and usages
->Note: The parameters with `<>` can be ignored. Mostly, they are set to 0 as default.
+>**Note** <br> - The parameters with `<>` can be ignored. Mostly, they are set to 0 as default. <br>  - The shaders are not designed for selected areas without specific explanation.
 ### INDEX
 * <a href="#terrain-generator">Terrain generator</a>
 * <a href="#flow">Flow</a>
 * <a href="#flow2">Flow2</a>
+* <a href="#project">Project</a>
 * <a href="#hyperflood">[Unstable] Hyperflood</a>
 * <a href="#life-game">Life game</a>
 * <a href="#blanket">Blanket</a>
@@ -49,8 +50,7 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 >3. By using the xyz-shifting of the shader & the new *world* system of MagicaVoxel 0.99.x, you'll be able to create a large terrain map. (fig. 3)
 * Image preview:
 
-  <img src="img/tg.png" width="250px"></img><img src="img/tg1.png" width="250px"></img>
-  <img src="img/tg2.png" width="250px"></img>
+  <img src="img/tg.png" width="250px"></img><img src="img/tg1.png" width="250px"></img><img src="img/tg2.png" width="250px"></img>
 ### FLOW
 <a href="#index">back to index</a>
 > This shader emulates the waterflow mechanics in the nature.
@@ -72,6 +72,19 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 
   <img width="250px" src="img/flow2_1.png"></img>
   <img width="250px" src="img/flow2_2.png"></img>
+
+### PROJECT
+<a href="#index">back to index</a>
+>Project the color of a given x-y plane to the suface under it.
+* File name: `project.txt`
+* Command-line usage: `xs project [height]`
+* Command-line e.g.: `xs project 64`
+>
+* Image preview:
+
+  <img width="250px" src="img/pro.png"></img>
+  <img width="250px" src="img/pro1.png"></img>
+
 ### HYPERFLOOD
 <a href="#index">back to index</a>
 >**UNSTABLE. DO NOT USE.<br>GO TO FLOW2 INSTEAD.**
@@ -130,7 +143,7 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 * File name: `flood.txt`
 * Command-line usage: `xs flood [height] [color]`
 * Command-line e.g.: `xs flood 60 169`
->This shader is not designed for selected areas. 
+>
 * Image preview:
 
   <img src="img/f.png" width="250px"></img>
@@ -138,8 +151,7 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 <a href="#index">back to index</a>
 * File name: `darker.txt`
 * Command-line usage: `xs darker`
->1. This shader requires you to set the palette id to 0.
->2. This shader is not designed for selected areas. 
+> This shader requires you to set the palette id to 0. 
 * Image preview:
 
   <img src="img/d.png" width="150px"></img><img src="img/d1.png" width="150px"></img><img src="img/d2.png" width="150px"></img>
