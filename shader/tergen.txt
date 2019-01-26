@@ -4,15 +4,15 @@ If you like this project, give it a star!
 GL Shading Language.
 Terrain Generator Shader for Magicavoxel
 Command-line usage: 'xs tergen [seed] [altitude] [noise-scale] [voxel-color] [void-voxel-color (-1 for not emptying the scene)] [vertical-shifting (signed int)] [x-shifting] [y-shifting]' (Each parameter is required or the code won't work correctly.)
-e.g. xs tergen 1248343 50 20 1 0 -10 10 10
+e.g. xs tergen 19260817 50 20 1 0 -10 10 10
 Limited by the noise algorithm, the x-y shifting process only gets the abs of input value.
 It is recommended that you set the scene size to 126x126x126 for the best view.
 MIT License
 */
 
 float noise(int x, int y){
-  x %= 25;
-  y %= 25;
+  x = int(mod(float(x),25.));
+  y = int(mod(float(y),25.));
   int n = x + y * 57;
   n = (n<<13) ^ n;
   float o=1.0f-(float((n*(n*n*int(iArgs[0]) + 789221 ) + 1376312589 ) & 0xFFFFFFFF)/1073741824.0f);
@@ -27,15 +27,15 @@ float snoise(int x, int y){
 }
 
 float cosini(float a, float b, float x){
-  float f=(1-cos(x*3.1415927))*0.5f;
-  return a*(1-f)+b*f;
+  float f=(1.-cos(x*3.1415927))*0.5f;
+  return a*(1.-f)+b*f;
 }
 
 float inno(float x, float y){
   int intX=int(x);
-  float fraX=x-intX;
+  float fraX=x-float(intX);
   int intY=int(y);
-  float fraY=y-intY;
+  float fraY=y-float(intY);
   float i1=cosini(snoise(intX,intY),snoise(intX+1,intY),fraX);
   float i2=cosini(snoise(intX,intY+1),snoise(intX+1,intY+1),fraX);
   return cosini(i1,i2,fraY);
@@ -44,13 +44,13 @@ float inno(float x, float y){
 float pernoi(float x, float y){
   float total=0.;
   for(int i=0;i<=20;i++){
-    float freq=pow(float(2),i);
-    total+=inno(x*freq,y*freq)*pow(0.45f,i);
+    float freq=pow(float(2),float(i));
+    total+=inno(x*freq,y*freq)*pow(0.45f,float(i));
   }
   return total;
 }
 
 float map(vec3 v) {
-  float height = int(float(pernoi((float(v.x)+abs(iArgs[6]))/float(iArgs[2]),(float(v.y)+abs(iArgs[7]))/float(iArgs[2]))*iArgs[1]))+iArgs[5];
-  return ((int(v.z)<=int(height))?iArgs[3]:(iArgs[4]==-1?voxel(v):iArgs[4]));
+  float height = float(int(float(pernoi((float(v.x)+abs(iArgs[6]))/float(iArgs[2]),(float(v.y)+abs(iArgs[7]))/float(iArgs[2]))*iArgs[1])))+iArgs[5];
+  return ((int(v.z)<=int(height))?iArgs[3]:(iArgs[4]==-1.?voxel(v):iArgs[4]));
 }

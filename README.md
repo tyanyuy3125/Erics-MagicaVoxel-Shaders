@@ -2,11 +2,11 @@
 Shaders for MagicaVoxel including Terrain Generator, Advanced Flood System etc.
 
 ## Internationalization
-- <a href="./i18n/README-sc.md">简体中文</a> - translated by <a href="http://github.com/codingeric">CodingEric</a>
-- <a href="./i18n/README-fr.md">Français</a> - translated by <a href="http://moiscript.weebly.com/magicavoxel.html">Pilou</a> - Authorized reproduce
+- <a href="./i18n/README-sc.md">简体中文</a> - translated by <a href="http://github.com/codingeric">CodingEric</a>, target version: `0.0.6.0`
+- <a href="./i18n/README-fr.md">Français</a> - translated by <a href="http://moiscript.weebly.com/magicavoxel.html">Pilou</a> - Authorized reproduce, target version: `0.0.6.0`
 
 ## Project Info
-* Current version: `0.0.7.0`
+* Current version: `0.0.7.1`
 * State: `LTS`
 * Tested with `MagicaVoxel 0.99.2 for Windows`
 * Released under `MIT License`
@@ -32,11 +32,12 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 * <a href="#flow">Flow</a>
 * <a href="#flow2">Flow2</a>
 * <a href="#project">Project</a>
-* <a href="#hyperflood">[Unstable] Hyperflood</a>
 * <a href="#life-game">Life game</a>
+* <a href="#drop">Drop</a>
 * <a href="#blanket">Blanket</a>
 * <a href="#cube-filling">Cube filling</a>
 * <a href="#flood">Flood</a>
+* <a href="#hyperflood">[Unstable] Hyperflood</a>
 * <a href="#darker">Darker</a>
 ### TERRAIN GENERATOR
 <a href="#index">back to index</a>
@@ -46,7 +47,7 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 * Command-line e.g.: `xs tergen 19260817 50 20 1 0 -10 10 10`
 * Minimal edition e.g.: `xs tergen 19260817 50 20 1`
 >1. It is recommended that you set the scene size to 126x126x126 for the best view.
->2. ~~This shader will empty your scene.~~ Set void-voxel-color to -1 to not remove the original scene.
+>2. Set void-voxel-color to -1 to not remove the original scene.
 >3. By using the xyz-shifting of the shader & the new *world* system of MagicaVoxel 0.99.x, you'll be able to create a large terrain map. (fig. 3)
 * Image preview:
 
@@ -84,22 +85,6 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 
   <img width="250px" src="img/pro.png"></img>
   <img width="250px" src="img/pro1.png"></img>
-
-### HYPERFLOOD
-<a href="#index">back to index</a>
->**UNSTABLE. DO NOT USE.<br>GO TO FLOW2 INSTEAD.**
-
->Unlike the classic flood shader, this shader provides a solution for closed water area.
-* File name: `hyperflood.txt`
-* Command-line usage: `xs hyperflood [x] [y] [z]` (The parameters represent the coordinate of the water source.)
-* Command-line e.g.: `xs hyperflood 3 5 3`
->1. The color of water is controlled by selected color in the palette.
->2. DANGER - READ BEFORE USE
-<br>- THE SHADER ONLY SUPPORTS SCENES WITH LESS THAN 40 UNITS OF XYZ-VOLUMESIZE. (You can change line 17 to remove the limit, but think over first.)
-<br>- LIMITED BY THE INNER EXPLAINATOR OF MAGICAVOXEL, THE SHADER IS NOT STABLE. IF THE FILLING SPACE IS TOO LARGE, MAGICAVOXEL MAY CRASH.
-* Image preview:
-
-  <img src="img/h.png"></img>
 ### LIFE GAME
 <a href="#index">back to index</a>
 * File name: `lifegame.txt`
@@ -111,6 +96,13 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
   <img src="img/l1.png" width="250px"></img>
   <img src="img/l2.png" width="250px"></img>
   <img src="img/l3.png" width="250px"></img>
+### DROP
+<a href="#index">back to index</a>
+* File name: `drop.txt`
+* Command-line usage: `xs drop [color-index]`
+* Command-line e.g.: `xs drop 1`
+> This shader simulates the water drop process.
+
 ### BLANKET
 <a href="#index">back to index</a>
 * File name: `blanket.txt`
@@ -147,6 +139,21 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 * Image preview:
 
   <img src="img/f.png" width="250px"></img>
+### HYPERFLOOD
+<a href="#index">back to index</a>
+>**UNSTABLE. DO NOT USE.<br>GO TO FLOW2 INSTEAD.**
+
+>Unlike the classic flood shader, this shader provides a solution for closed water area.
+* File name: `hyperflood.txt`
+* Command-line usage: `xs hyperflood [x] [y] [z]` (The parameters represent the coordinate of the water source.)
+* Command-line e.g.: `xs hyperflood 3 5 3`
+>1. The color of water is controlled by selected color in the palette.
+>2. DANGER - READ BEFORE USE
+<br>- THE SHADER ONLY SUPPORTS SCENES WITH LESS THAN 40 UNITS OF XYZ-VOLUMESIZE. (You can change line 17 to remove the limit, but think over first.)
+<br>- LIMITED BY THE INNER EXPLAINATOR OF MAGICAVOXEL, THE SHADER IS NOT STABLE. IF THE FILLING SPACE IS TOO LARGE, MAGICAVOXEL MAY CRASH.
+* Image preview:
+
+  <img src="img/h.png"></img>
 ### DARKER
 <a href="#index">back to index</a>
 * File name: `darker.txt`
