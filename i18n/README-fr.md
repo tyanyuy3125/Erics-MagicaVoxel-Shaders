@@ -51,20 +51,6 @@ Installez ces shaders en copiant les fichiers du répertoire shader de ce projet
 
   <img width="250px" src="../img/flow2_1.png"></img>
   <img width="250px" src="../img/flow2_2.png"></img>
-### HYPERFLOOD
-<a href="#catalogue">Retour au catalogue</a>
->**UNSTABLE<br>ALLEZ DANS FLOW2 À LA PLACE.**
-
->Contrairement au shader classique, ce shader offre une solution pour les zones d'eau fermées.
-* Nom de fichier: `hyperflood.txt`
-* Utilisation de la ligne de commande: `xs hyperflood [x] [y] [z]` (Les paramètres représentent les coordonnées de la source d'eau.)
-* Ligne de commande: `xs hyperflood 3 5 3`
->1. La couleur de l'eau est contrôlée par la couleur sélectionnée dans la palette.
->2. DANGER - LIRE AVANT UTILISATION 
-<br>- LE SHADER NE SUPPORTE QUE LES SCÈNES AVEC MOINS DE 40 UNITÉS DE XYZ-VOLUMESIZE. (Vous pouvez modifier la ligne 17 pour supprimer la limite, mais réfléchissez d'abord).<br>- LIMITÉ PAR L'EXPLICATIF INTÉRIEUR DE MAGICAVOXEL, LE SHADER N'EST PAS STABLE. SI L'ESPACE DE REMPLISSAGE EST TROP GRAND, MAGICAVOXEL PEUT S'ÉCRASER.
-* Aperçu de l'image:
-
-  <img src="../img/h.png"></img>
 ### LIFE GAME
 <a href="#catalogue">Retour au catalogue</a>
 * Nom de fichier: `lifegame.txt`
@@ -111,6 +97,20 @@ Installez ces shaders en copiant les fichiers du répertoire shader de ce projet
 * Aperçu de l'image:
 
   <img src="../img/f.png" width="250px"></img>
+### HYPERFLOOD
+<a href="#catalogue">Retour au catalogue</a>
+>**UNSTABLE<br>ALLEZ DANS FLOW2 À LA PLACE.**
+
+>Contrairement au shader classique, ce shader offre une solution pour les zones d'eau fermées.
+* Nom de fichier: `hyperflood.txt`
+* Utilisation de la ligne de commande: `xs hyperflood [x] [y] [z]` (Les paramètres représentent les coordonnées de la source d'eau.)
+* Ligne de commande: `xs hyperflood 3 5 3`
+>1. La couleur de l'eau est contrôlée par la couleur sélectionnée dans la palette.
+>2. DANGER - LIRE AVANT UTILISATION 
+<br>- LE SHADER NE SUPPORTE QUE LES SCÈNES AVEC MOINS DE 40 UNITÉS DE XYZ-VOLUMESIZE. (Vous pouvez modifier la ligne 17 pour supprimer la limite, mais réfléchissez d'abord).<br>- LIMITÉ PAR L'EXPLICATIF INTÉRIEUR DE MAGICAVOXEL, LE SHADER N'EST PAS STABLE. SI L'ESPACE DE REMPLISSAGE EST TROP GRAND, MAGICAVOXEL PEUT S'ÉCRASER.
+* Aperçu de l'image:
+
+  <img src="../img/h.png"></img>
 ### DARKER
 <a href="#catalogue">Retour au catalogue</a>
 * Nom de fichier: `darker.txt`

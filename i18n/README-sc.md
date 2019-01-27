@@ -6,7 +6,7 @@
 为MagicaVoxel设计的Shader，包含地形生成器，增强的洪流系统等。
 
 ## 项目信息
-* 当前版本: `0.0.7.0`
+* 当前版本: `0.0.7.1`
 * 状态: `长期支持`
 * 使用 `MagicaVoxel 0.99.2 for Windows` 测试
 * 在 `MIT License` 下发行
@@ -32,11 +32,12 @@
 * <a href="#flow">Flow</a>
 * <a href="#flow2">Flow2</a>
 * <a href="#project">Project</a>
-* <a href="#hyperflood">[Unstable] Hyperflood</a>
 * <a href="#life-game">Life game</a>
+* <a href="#drop">Drop</a>
 * <a href="#blanket">Blanket</a>
 * <a href="#cube-filling">Cube filling</a>
 * <a href="#flood">Flood</a>
+* <a href="#hyperflood">[Unstable] Hyperflood</a>
 * <a href="#darker">Darker</a>
 ### TERRAIN GENERATOR
 <a href="#index">回到目录</a>
@@ -46,7 +47,7 @@
 * 命令行用法示例: `xs tergen 19260817 50 20 1 0 -10 10 10`
 * 命令行用法最简示例: `xs tergen 19260817 50 20 1`
 >1. 推荐您把场景大小设置为126x126x126以获得最佳效果。
->2. ~~该Shader会清空你的场景~~ 把 void-voxel-color 设置为 -1 将不会清空场景。
+>2. 把 void-voxel-color 设置为 -1 将不会清空场景。
 >3. 通过使用 MagicaVoxel0.99.x 的世界系统和本shader的xyz偏移选项，您将有机会创建一个如图3所示的大型地形图。
 * 图片预览:
 
@@ -84,21 +85,6 @@
 
   <img width="250px" src="../img/pro.png"></img>
   <img width="250px" src="../img/pro1.png"></img>
-
-### HYPERFLOOD
-<a href="#index">回到目录</a>
->**不稳定<br>请使用FLOW2**
-
->与经典flood着色器不同，本shader提供了一个闭合水区的解决方案。
-* 文件名称: `hyperflood.txt`
-* 命令行用法: `xs hyperflood [x] [y] [z]` (参数指示了水源坐标)
-* 命令行用法示例: `xs hyperflood 3 5 3`
->1. 水的颜色受到调色板控制
->2. 危险 - 用前读我
-<br>- 本Shader只支持最大40x40x40的场景大小 (你可以更改代码的第17行改变限制，但这会使 MagicaVoxel 的着色器崩溃)
-* 图片预览:
-
-  <img src="../img/h.png"></img>
 ### LIFE GAME
 <a href="#index">回到目录</a>
 * 文件名称: `lifegame.txt`
@@ -110,6 +96,19 @@
   <img src="../img/l1.png" width="250px"></img>
   <img src="../img/l2.png" width="250px"></img>
   <img src="../img/l3.png" width="250px"></img>
+### DROP
+<a href="#index">回到目录</a>
+* 文件名称: `drop.txt`
+* 命令行用法: `xs drop [color-index]`
+* 命令行用法示例: `xs drop 1`
+> 本shader模拟水滴过程。
+* 图片预览:
+
+  <img src="../img/dr1.png" width="120px"></img>
+  <img src="../img/dr2.png" width="120px"></img>
+  <img src="../img/dr3.png" width="120px"></img>
+  <img src="../img/dr4.png" width="120px"></img>
+  <img src="../img/dr5.png" width="120px"></img>
 ### BLANKET
 <a href="#index">回到目录</a>
 * 文件名称: `blanket.txt`
@@ -146,6 +145,20 @@
 * 图片预览:
 
   <img src="../img/f.png" width="250px"></img>
+### HYPERFLOOD
+<a href="#index">回到目录</a>
+>**不稳定<br>请使用FLOW2**
+
+>与经典flood着色器不同，本shader提供了一个闭合水区的解决方案。
+* 文件名称: `hyperflood.txt`
+* 命令行用法: `xs hyperflood [x] [y] [z]` (参数指示了水源坐标)
+* 命令行用法示例: `xs hyperflood 3 5 3`
+>1. 水的颜色受到调色板控制
+>2. 危险 - 用前读我
+<br>- 本Shader只支持最大40x40x40的场景大小 (你可以更改代码的第17行改变限制，但这会使 MagicaVoxel 的着色器崩溃)
+* 图片预览:
+
+  <img src="../img/h.png"></img>
 ### DARKER
 <a href="#index">回到目录</a>
 * 文件名称: `darker.txt`

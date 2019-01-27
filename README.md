@@ -2,7 +2,7 @@
 Shaders for MagicaVoxel including Terrain Generator, Advanced Flood System etc.
 
 ## Internationalization
-- <a href="./i18n/README-sc.md">简体中文</a> - translated by <a href="http://github.com/codingeric">CodingEric</a>, target version: `0.0.6.0`
+- <a href="./i18n/README-sc.md">简体中文</a> - translated by <a href="http://github.com/codingeric">CodingEric</a>, target version: `0.0.7.1`
 - <a href="./i18n/README-fr.md">Français</a> - translated by <a href="http://moiscript.weebly.com/magicavoxel.html">Pilou</a> - Authorized reproduce, target version: `0.0.6.0`
 
 ## Project Info
@@ -102,7 +102,13 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 * Command-line usage: `xs drop [color-index]`
 * Command-line e.g.: `xs drop 1`
 > This shader simulates the water drop process.
+* Image preview:
 
+  <img src="img/dr1.png" width="120px"></img>
+  <img src="img/dr2.png" width="120px"></img>
+  <img src="img/dr3.png" width="120px"></img>
+  <img src="img/dr4.png" width="120px"></img>
+  <img src="img/dr5.png" width="120px"></img>
 ### BLANKET
 <a href="#index">back to index</a>
 * File name: `blanket.txt`
