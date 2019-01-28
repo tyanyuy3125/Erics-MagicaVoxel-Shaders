@@ -38,7 +38,7 @@
 * <a href="#cube-filling">Cube filling</a>
 * <a href="#flood">Flood</a>
 * <a href="#hyperflood">[Unstable] Hyperflood</a>
-* <a href="#darker">Darker</a>
+* <a href="#darker">[Deprecated] Darker</a>
 ### TERRAIN GENERATOR
 <a href="#index">回到目录</a>
 * 文件名称: `tergen.txt`

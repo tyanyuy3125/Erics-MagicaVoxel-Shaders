@@ -38,7 +38,7 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 * <a href="#cube-filling">Cube filling</a>
 * <a href="#flood">Flood</a>
 * <a href="#hyperflood">[Unstable] Hyperflood</a>
-* <a href="#darker">Darker</a>
+* <a href="#darker">[Deprecated] Darker</a>
 ### TERRAIN GENERATOR
 <a href="#index">back to index</a>
 * File name: `tergen.txt`

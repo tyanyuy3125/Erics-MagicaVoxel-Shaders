@@ -17,7 +17,7 @@ Installez ces shaders en copiant les fichiers du répertoire shader de ce projet
 * <a href="#cube-filling">Cube filling</a>
 * <a href="#flood">Flood</a>
 * <a href="#hyperflood">[Unstable] Hyperflood</a>
-* <a href="#darker">Darker</a>
+* <a href="#darker">[Deprecated] Darker Darker</a>
 ### TERRAIN GENERATOR
 <a href="#catalogue">Retour au catalogue</a>
 * Nom de fichier: `tergen.txt`
