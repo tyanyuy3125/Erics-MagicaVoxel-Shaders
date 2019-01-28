@@ -11,11 +11,12 @@ Installez ces shaders en copiant les fichiers du répertoire shader de ce projet
 * <a href="#terrain-generator">Terrain generator</a>
 * <a href="#flow">Flow</a>
 * <a href="#flow2">Flow2</a>
-* <a href="#hyperflood">[Unstable] Hyperflood</a>
+* <a href="#project">Project</a>
 * <a href="#life-game">Life game</a>
 * <a href="#blanket">Blanket</a>
 * <a href="#cube-filling">Cube filling</a>
 * <a href="#flood">Flood</a>
+* <a href="#hyperflood">[Unstable] Hyperflood</a>
 * <a href="#darker">Darker</a>
 ### TERRAIN GENERATOR
 <a href="#catalogue">Retour au catalogue</a>
@@ -51,6 +52,17 @@ Installez ces shaders en copiant les fichiers du répertoire shader de ce projet
 
   <img width="250px" src="../img/flow2_1.png"></img>
   <img width="250px" src="../img/flow2_2.png"></img>
+### PROJECT
+<a href="#catalogue">Retour au catalogue</a>
+* Nom de fichier : project.txt
+* ​Utilisation de la ligne de commande​ : xs project[altitude du plan xy] 
+* Ligne de commande d'exemple : xs project 64 (64 étant l'altitude Z d'un plan XY de voxels couleurs dans la matrice active)
+>Toutes les couleurs d'une altitude donnée vont être projettées sur les volumes existants de la matrice active!
+* Aperçu de l'image:
+
+  <img width="250px" src="../img/pro.png"></img>
+  <img width="250px" src="../img/pro1.png"></img>
+  <img width="250px" src="../img/pro2.gif"></img>
 ### LIFE GAME
 <a href="#catalogue">Retour au catalogue</a>
 * Nom de fichier: `lifegame.txt`

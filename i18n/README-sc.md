@@ -6,7 +6,7 @@
 为MagicaVoxel设计的Shader，包含地形生成器，增强的洪流系统等。
 
 ## 项目信息
-* 当前版本: `0.0.7.1`
+* 当前版本: `0.0.8.0`
 * 状态: `长期支持`
 * 使用 `MagicaVoxel 0.99.2 for Windows` 测试
 * 在 `MIT License` 下发行
@@ -85,6 +85,7 @@
 
   <img width="250px" src="../img/pro.png"></img>
   <img width="250px" src="../img/pro1.png"></img>
+  <img width="250px" src="../img/pro2.gif"></img>
 ### LIFE GAME
 <a href="#index">回到目录</a>
 * 文件名称: `lifegame.txt`

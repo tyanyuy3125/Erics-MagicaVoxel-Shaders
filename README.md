@@ -2,11 +2,11 @@
 Shaders for MagicaVoxel including Terrain Generator, Advanced Flood System etc.
 
 ## Internationalization
-- <a href="./i18n/README-sc.md">简体中文</a> - translated by <a href="http://github.com/codingeric">CodingEric</a>, target version: `0.0.7.1`
-- <a href="./i18n/README-fr.md">Français</a> - translated by <a href="http://moiscript.weebly.com/magicavoxel.html">Pilou</a> - Authorized reproduce, target version: `0.0.6.0`
+- <a href="./i18n/README-sc.md">简体中文</a> - translated by <a href="http://github.com/codingeric">CodingEric</a>, target version: `0.0.8.0`
+- <a href="./i18n/README-fr.md">Français</a> - translated by <a href="http://moiscript.weebly.com/magicavoxel.html">Pilou</a> - Authorized reproduce, target version: `0.0.7.0`
 
 ## Project Info
-* Current version: `0.0.7.1`
+* Current version: `0.0.8.0`
 * State: `LTS`
 * Tested with `MagicaVoxel 0.99.2 for Windows`
 * Released under `MIT License`
@@ -16,7 +16,7 @@ Shaders for MagicaVoxel including Terrain Generator, Advanced Flood System etc.
 Copy the .txt files from the `shader` directory in this project to the `shader` directory of your MagicaVoxel installation.
 
 ## Compatibility
->Notice: The compatibility issue in older GLSL versions will be think of as bugs, please post them in the issues of the project.
+>Notice: The compatibility issue in older GLSL versions will be thought of as bugs, please post them in the issues of the project.
 
 | Version | Is compatible | Note |
 | ------ | :------: | ------ |
@@ -85,6 +85,7 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 
   <img width="250px" src="img/pro.png"></img>
   <img width="250px" src="img/pro1.png"></img>
+  <img width="250px" src="img/pro2.gif"></img>
 ### LIFE GAME
 <a href="#index">back to index</a>
 * File name: `lifegame.txt`
