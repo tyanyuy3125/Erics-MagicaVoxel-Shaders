@@ -6,9 +6,9 @@
 为MagicaVoxel设计的Shader，包含地形生成器，增强的洪流系统等。
 
 ## 项目信息
-* 当前版本: `0.0.8.0`
+* 当前版本: `0.0.9.0`
 * 状态: `长期支持`
-* 使用 `MagicaVoxel 0.99.2 for Windows` 测试
+* 使用 `MagicaVoxel 0.99.3 for Windows` 测试
 * 在 `MIT License` 下发行
 * 语言: `GLSL`
 
@@ -24,6 +24,7 @@
 | 0.99 | √ | 无法在指令栏显示调色板 |
 | 0.99.1 | √ | 无法在指令栏显示调色板 |
 | 0.99.2 | √ | |
+| 0.99.3 | √ | |
 
 ## Shader们和使用方法
 >**注意** <br> - 具有 `<>` 的参数可以被忽略。多数时候，他们被默认设置为0。<br> - 除非特别说明，Shader们不支持选择区域处理。
@@ -41,11 +42,13 @@
 * <a href="#darker">[Deprecated] Darker</a>
 ### TERRAIN GENERATOR
 <a href="#index">回到目录</a>
+>1. 更旧的版本由于不支持一些古老的GLSL版本已经被舍弃，十分感谢bug提交者的贡献。
+>2. 噪波生成提供方为 ashima/webgl-noise: Copyright (C) 2011 Ashima Arts 保留所有权利
 * 文件名称: `tergen.txt`
 * 命令行用法: `xs tergen [seed] [altitude] 
 [noise-scale] [voxel-color] <void-voxel-color> <vertical-shifting> <x-shifting> <y-shifting>`
-* 命令行用法示例: `xs tergen 19260817 50 20 1 0 -10 10 10`
-* 命令行用法最简示例: `xs tergen 19260817 50 20 1`
+* 命令行用法示例: `xs tergen 19260817 40 90 1 -1 10 -50 -10`
+* 命令行用法最简示例: `xs tergen 19260817 40 90 1`
 >1. 推荐您把场景大小设置为126x126x126以获得最佳效果。
 >2. 把 void-voxel-color 设置为 -1 将不会清空场景。
 >3. 通过使用 MagicaVoxel0.99.x 的世界系统和本shader的xyz偏移选项，您将有机会创建一个如图3所示的大型地形图。

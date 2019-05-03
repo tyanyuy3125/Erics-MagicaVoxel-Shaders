@@ -3,54 +3,72 @@ Via Github@CodingEric
 If you like this project, give it a star!
 GL Shading Language.
 Terrain Generator Shader for Magicavoxel
-Command-line usage: 'xs tergen [seed] [altitude] [noise-scale] [voxel-color] [void-voxel-color (-1 for not emptying the scene)] [vertical-shifting (signed int)] [x-shifting] [y-shifting]' (Each parameter is required or the code won't work correctly.)
-e.g. xs tergen 19260817 50 20 1 0 -10 10 10
-Limited by the noise algorithm, the x-y shifting process only gets the abs of input value.
+Command-line usage: 'xs tergen [seed] [altitude] [noise-scale] [voxel-color] [void-voxel-color (-1 for not emptying the scene)] [vertical-shifting] [x-shifting] [y-shifting]'
+e.g. xs tergen 19260817 40 90 1 -1 10 -50 -10
 It is recommended that you set the scene size to 126x126x126 for the best view.
+Noise generation algorithm provider: Copyright (C) 2011 Ashima Arts. All rights reserved.
 MIT License
 */
 
-float noise(int x, int y){
-  x = int(mod(float(x),25.));
-  y = int(mod(float(y),25.));
-  int n = x + y * 57;
-  n = (n<<13) ^ n;
-  float o=1.0-(float((n*(n*n*int(iArgs[0]) + 789221 ) + 1376312589 ) & 0xFFFFFFFF)/1073741824.0);
-  return o;
+float seed;
+
+vec3 mod289(vec3 x) {
+  return x - floor(x * (1.0 / 289.0)) * 289.0;
 }
 
-float snoise(int x, int y){
-  float co = (noise(x-1,y-1)+noise(x+1,y-1)+noise(x-1,y+1)+noise(x+1,y+1))/16.0;
-  float si = (noise(x-1,y)+noise(x+1,y)+noise(x,y-1)+noise(x,y+1))/8.0;
-  float ce = noise(x,y)/4.0;
-  return co+si+ce;
+vec2 mod289(vec2 x) {
+  return x - floor(x * (1.0 / 289.0)) * 289.0;
 }
 
-float cosini(float a, float b, float x){
-  float f=(1.-cos(x*3.1415927))*0.5;
-  return a*(1.-f)+b*f;
+vec3 permute(vec3 x) {
+  return mod289(((x*34.0)+1.0)*x);
 }
 
-float inno(float x, float y){
-  int intX=int(x);
-  float fraX=x-float(intX);
-  int intY=int(y);
-  float fraY=y-float(intY);
-  float i1=cosini(snoise(intX,intY),snoise(intX+1,intY),fraX);
-  float i2=cosini(snoise(intX,intY+1),snoise(intX+1,intY+1),fraX);
-  return cosini(i1,i2,fraY);
-}
-
-float pernoi(float x, float y){
-  float total=0.;
-  for(int i=0;i<=20;i++){
-    float freq=pow(float(2),float(i));
-    total+=inno(x*freq,y*freq)*pow(0.45,float(i));
-  }
-  return total;
+float snoise(vec2 v)
+  {
+  const vec4 C = vec4(0.211324865405187,
+                      0.366025403784439,
+                     -0.577350269189626,
+                      0.024390243902439);
+  vec2 i  = floor(v + dot(v, C.yy) );
+  vec2 x0 = v -   i + dot(i, C.xx);
+  vec2 i1;
+  i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
+  vec4 x12 = x0.xyxy + C.xxzz;
+  x12.xy -= i1;
+  i = mod289(i);
+  vec3 p = permute( permute( i.y + vec3(0.0, i1.y, 1.0 ))
+		+ i.x + vec3(0.0, i1.x, 1.0 ));
+  p=permute(p+vec3(seed));
+  vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy), dot(x12.zw,x12.zw)), 0.0);
+  m = m*m ;
+  m = m*m ;
+  vec3 x = 2.0 * fract(p * C.www) - 1.0;
+  vec3 h = abs(x) - 0.5;
+  vec3 ox = floor(x + 0.5);
+  vec3 a0 = x - ox;
+  m *= 1.79284291400159 - 0.85373472095314 * ( a0*a0 + h*h );
+  vec3 g;
+  g.x  = a0.x  * x0.x  + h.x  * x0.y;
+  g.yz = a0.yz * x12.xz + h.yz * x12.yw;
+  return 130.0 * dot(m, g);
 }
 
 float map(vec3 v) {
-  float height = float(int(float(pernoi((float(v.x)+abs(iArgs[6]))/float(iArgs[2]),(float(v.y)+abs(iArgs[7]))/float(iArgs[2]))*iArgs[1])))+iArgs[5];
-  return ((int(v.z)<=int(height))?iArgs[3]:(iArgs[4]==-1.?voxel(v):iArgs[4]));
+  float yShift=iArgs[7];
+  float xShift=iArgs[6];
+  float verticalShift=iArgs[5];
+  float vvcolor=iArgs[4];
+  float vcolor=iArgs[3];
+  float mapScale=iArgs[2];
+  seed=iArgs[0];
+  float height=snoise(vec2((v.x+xShift)/mapScale,(v.y+yShift)/mapScale))
+  +snoise(vec2((v.x+xShift)/(0.25*mapScale),(v.y+yShift)/(0.25*mapScale)))*0.125;
+  +snoise(vec2((v.x+xShift)/(0.125*mapScale),(v.y+yShift)/(0.125*mapScale)))*0.075;
+  height=pow(0.4,height)*iArgs[1];
+  if(v.z<=height+verticalShift){
+    return vcolor;
+  }
+  if(vvcolor==-1.)return voxel(v);
+  return vvcolor;
 }

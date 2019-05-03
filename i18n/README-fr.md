@@ -23,8 +23,8 @@ Installez ces shaders en copiant les fichiers du répertoire shader de ce projet
 * Nom de fichier: `tergen.txt`
 * Utilisation de la ligne de commande: `xs tergen [seed] [altitude] 
 [noise-scale] [voxel-color] <void-voxel-color> <vertical-shifting> <x-shifting> <y-shifting>`
-* Ligne de commande: `xs tergen 19260817 50 20 1 0 -10 10 10`
-* Edition minimale: `xs tergen 19260817 50 20 1`
+* Ligne de commande: `xs tergen 19260817 40 90 1 -1 10 -50 -10`
+* Edition minimale: `xs tergen 19260817 40 90 1`
 >1. Il est recommandé de régler la taille de la scène sur 126x126x126x126 pour obtenir la meilleure vue.
 >2. Réglez la couleur void-voxel sur -1 pour ne pas supprimer la scène originale.
 >3. En utilisant le xyz-shifting du shader et le nouveau système global de MagicaVoxel 0.99.x, vous pourrez créer une grande carte du terrain. (fig. 3)

@@ -2,13 +2,13 @@
 Shaders for MagicaVoxel including Terrain Generator, Advanced Flood System etc.
 
 ## Internationalization
-- <a href="./i18n/README-sc.md">简体中文</a> - translated by <a href="http://github.com/codingeric">CodingEric</a>, target version: `0.0.8.0`
+- <a href="./i18n/README-sc.md">简体中文</a> - translated by <a href="http://github.com/codingeric">CodingEric</a>, target version: `0.0.9.0`
 - <a href="./i18n/README-fr.md">Français</a> - translated by <a href="http://moiscript.weebly.com/magicavoxel.html">Pilou</a> - Authorized reproduce, target version: `0.0.7.0`
 
 ## Project Info
-* Current version: `0.0.8.0`
+* Current version: `0.0.9.0`
 * State: `LTS`
-* Tested with `MagicaVoxel 0.99.2 for Windows`
+* Tested with `MagicaVoxel 0.99.3 for Windows`
 * Released under `MIT License`
 * Language: `GLSL`
 
@@ -24,6 +24,7 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 | 0.99 | √ | Cannot show color id in the command panel |
 | 0.99.1 | √ | Cannot show color id in the command panel |
 | 0.99.2 | √ | |
+| 0.99.3 | √ | |
 
 ## Shaders and usages
 >**Note** <br> - The parameters with `<>` can be ignored. Mostly, they are set to 0 as default. <br>  - The shaders are not designed for selected areas without specific explanation.
@@ -41,11 +42,13 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 * <a href="#darker">[Deprecated] Darker</a>
 ### TERRAIN GENERATOR
 <a href="#index">back to index</a>
+>1. The older version, which cannot execute under some older GLSL versions, has been deprecated. Special thanks to those who reported bugs.
+>2. The noise generation method is provided by ashima/webgl-noise: Copyright (C) 2011 Ashima Arts. All rights reserved.
 * File name: `tergen.txt`
 * Command-line usage: `xs tergen [seed] [altitude] 
 [noise-scale] [voxel-color] <void-voxel-color> <vertical-shifting> <x-shifting> <y-shifting>`
-* Command-line e.g.: `xs tergen 19260817 50 20 1 0 -10 10 10`
-* Minimal edition e.g.: `xs tergen 19260817 50 20 1`
+* Command-line e.g.: `xs tergen 19260817 40 90 1 -1 10 -50 -10`
+* Minimal edition e.g.: `xs tergen 19260817 40 90 1`
 >1. It is recommended that you set the scene size to 126x126x126 for the best view.
 >2. Set void-voxel-color to -1 to not remove the original scene.
 >3. By using the xyz-shifting of the shader & the new *world* system of MagicaVoxel 0.99.x, you'll be able to create a large terrain map. (fig. 3)
