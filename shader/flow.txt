@@ -13,30 +13,30 @@ bool isNull=true;
 
 bool isAround(vec3 v,float tIndex){
     int flag=0;
-    if(voxel(vec3(v.x+1,v.y,v.z))==tIndex){
-        if(isNull==true||voxel(vec3(v.x+1,v.y,v.z-1))!=tIndex){
-            location=vec3(v.x+1,v.y,v.z);
+    if(voxel(vec3(v.x+1.,v.y,v.z))==tIndex){
+        if(isNull==true||voxel(vec3(v.x+1.,v.y,v.z-1.))!=tIndex){
+            location=vec3(v.x+1.,v.y,v.z);
             isNull=false;
         }
         flag++;
     }
-    if(voxel(vec3(v.x-1,v.y,v.z))==tIndex){
-        if(isNull==true||voxel(vec3(v.x-1,v.y,v.z-1))!=tIndex){
-            location=vec3(v.x-1,v.y,v.z);
+    if(voxel(vec3(v.x-1.,v.y,v.z))==tIndex){
+        if(isNull==true||voxel(vec3(v.x-1.,v.y,v.z-1.))!=tIndex){
+            location=vec3(v.x-1.,v.y,v.z);
             isNull=false;
         }
         flag++;
     }
-    if(voxel(vec3(v.x,v.y+1,v.z))==tIndex){
-        if(isNull==true||voxel(vec3(v.x,v.y+1,v.z-1))!=tIndex){
-            location=vec3(v.x,v.y+1,v.z);
+    if(voxel(vec3(v.x,v.y+1.,v.z))==tIndex){
+        if(isNull==true||voxel(vec3(v.x,v.y+1.,v.z-1.))!=tIndex){
+            location=vec3(v.x,v.y+1.,v.z);
             isNull=false;
         }
         flag++;
     }
-    if(voxel(vec3(v.x,v.y-1,v.z))==tIndex){
-        if(isNull==true||voxel(vec3(v.x,v.y-1,v.z-1))!=tIndex){
-            location=vec3(v.x,v.y-1,v.z);
+    if(voxel(vec3(v.x,v.y-1.,v.z))==tIndex){
+        if(isNull==true||voxel(vec3(v.x,v.y-1.,v.z-1.))!=tIndex){
+            location=vec3(v.x,v.y-1.,v.z);
             isNull=false;
         }
         flag++;
@@ -47,10 +47,10 @@ bool isAround(vec3 v,float tIndex){
 
 float map(vec3 v){
     float targetIndex=iArgs[0];
-    if(voxel(v)!=0)return voxel(v);
-    if(voxel(vec3(v.x,v.y,v.z+1))==targetIndex||voxel(v)==targetIndex){
+    if(voxel(v)!=0.)return voxel(v);
+    if(voxel(vec3(v.x,v.y,v.z+1.))==targetIndex||voxel(v)==targetIndex){
         return targetIndex;
-    }else if(isAround(v,targetIndex)&&voxel(vec3(location.x,location.y,location.z-1))!=0&&voxel(vec3(v.x,v.y,v.z-1))!=targetIndex&&voxel(vec3(location.x,location.y,location.z-1))!=targetIndex){
+    }else if(isAround(v,targetIndex)&&voxel(vec3(location.x,location.y,location.z-1.))!=0.&&voxel(vec3(v.x,v.y,v.z-1.))!=targetIndex&&voxel(vec3(location.x,location.y,location.z-1.))!=targetIndex){
         return targetIndex;
     }
     return voxel(v);
