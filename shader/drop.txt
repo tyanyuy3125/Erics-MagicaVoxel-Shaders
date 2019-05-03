@@ -16,7 +16,7 @@ bool chk(vec3 v){
 }
 
 float map(vec3 v){
-    if(voxel(v)==iArgs[0]&&voxel(vec3(v.x,v.y,v.z-1.))==0){
+    if(voxel(v)==iArgs[0]&&voxel(vec3(v.x,v.y,v.z-1.))==0.){
         return 0.;
     }else if(chk(v)){
         return iArgs[0];
