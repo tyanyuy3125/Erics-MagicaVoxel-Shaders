@@ -30,7 +30,7 @@ Installez ces shaders en copiant les fichiers du répertoire shader de ce projet
 >3. En utilisant le xyz-shifting du shader et le nouveau système global de MagicaVoxel 0.99.x, vous pourrez créer une grande carte du terrain. (fig. 3)
 * Aperçu de l'image:
 
-  <img src="../img/tg.png" width="250px"></img><img src="../img/tg1.png" width="250px"></img><img src="../img/tg2.png" width="250px"></img>
+  <img src="../img/tg.png" width="250px"><img src="../img/tg1.png" width="250px"><img src="../img/tg2.png" width="250px">
 ### FLOW
 <a href="#catalogue">Retour au catalogue</a>
 > Ce shader imite la mécanique de l'écoulement de l'eau dans la nature.
@@ -40,7 +40,7 @@ Installez ces shaders en copiant les fichiers du répertoire shader de ce projet
 >Les voxels avec un index donné sont source d'eau, le shader ne les créerait pas automatiquement, vous devez les attacher en premier.
 * Aperçu de l'image:
 
-  <img src="../img/flowShader.png"></img>
+  <img src="../img/flowShader.png">
 ### FLOW2
 <a href="#catalogue">Retour au catalogue</a>
 >Contrairement au shader classique, ce shader offre une solution pour les zones d'eau fermées.(fig.2)
@@ -50,8 +50,8 @@ Installez ces shaders en copiant les fichiers du répertoire shader de ce projet
 >Les voxels avec un index donné sont source d'eau, le shader ne les créerait pas automatiquement, vous devez les attacher en premier.
 * Aperçu de l'image:
 
-  <img width="250px" src="../img/flow2_1.png"></img>
-  <img width="250px" src="../img/flow2_2.png"></img>
+  <img width="250px" src="../img/flow2_1.png">
+  <img width="250px" src="../img/flow2_2.png">
 ### PROJECT
 <a href="#catalogue">Retour au catalogue</a>
 * Nom de fichier : project.txt
@@ -60,9 +60,9 @@ Installez ces shaders en copiant les fichiers du répertoire shader de ce projet
 >Toutes les couleurs d'une altitude donnée vont être projettées sur les volumes existants de la matrice active!
 * Aperçu de l'image:
 
-  <img width="250px" src="../img/pro.png"></img>
-  <img width="250px" src="../img/pro1.png"></img>
-  <img width="250px" src="../img/pro2.gif"></img>
+  <img width="250px" src="../img/pro.png">
+  <img width="250px" src="../img/pro1.png">
+  <img width="250px" src="../img/pro2.gif">
 ### LIFE GAME
 <a href="#catalogue">Retour au catalogue</a>
 * Nom de fichier: `lifegame.txt`
@@ -71,23 +71,9 @@ Installez ces shaders en copiant les fichiers du répertoire shader de ce projet
 > Conçu pour le plan X-Y. Utilisez une seule couleur dans votre scène, ou le shader la détruira.
 * Aperçu de l'image:
 
-  <img src="../img/l1.png" width="250px"></img>
-  <img src="../img/l2.png" width="250px"></img>
-  <img src="../img/l3.png" width="250px"></img>
-### BLANKET
-<a href="#catalogue">Retour au catalogue</a>
-* Nom de fichier: `blanket.txt`
-* Utilisation de la ligne de commandes: 
-  `xs blanket [voxel-color] <noise-seed> <noise-scale> <threshold (0~2 recommend)>`
-* Ligne de commande: `xs blanket 1 1248343 20 1.4`
-* Edition minimale: `xs blanket 1`
->1. Le shader ne couvrira que les zones qui ne sont pas couvertes. (Comme la neige)
->2. Esp. si le générateur de terrain et l'ombrage de couverture ont les mêmes graines de bruit et la même échelle, et que le xyz-shifting du générateur de terrain est nul, le résultat des deux ombres mélangées ensemble sera comme la couverture de neige réaliste des hautes montagnes. (fig. 3)
-* Aperçu de l'image:
-
-  <img src="../img/b.png" width="250px"></img>
-  <img src="../img/b1.png" width="250px"></img>
-  <img src="../img/b2.png" width="250px"></img>
+  <img src="../img/l1.png" width="250px">
+  <img src="../img/l2.png" width="250px">
+  <img src="../img/l3.png" width="250px">
 ### CUBE FILLING
 <a href="#catalogue">Retour au catalogue</a>
 * Nom de fichier: `cubefill.txt`
@@ -99,38 +85,6 @@ Installez ces shaders en copiant les fichiers du répertoire shader de ce projet
   2. `xs cubefill 0 50 50 50 10 216` -  Prendre les coordonnées (50,50,50) comme centre, créer un cube rouge avec une longueur latérale de 10 unités.
 * Aperçu de l'image:
 
-  <img src="../img/cf.png" width="250px"></img>
-### FLOOD
-<a href="#catalogue">Retour au catalogue</a>
-* Nom de fichier: `flood.txt`
-* Utilisation de la ligne de commande: `xs flood [height] [color]`
-* Ligne de commande: `xs flood 60 169`
->Ce shader n'est pas conçu pour des zones sélectionnées. (Ceci pourrait être amélioré dans les prochaines versions)
-* Aperçu de l'image:
-
-  <img src="../img/f.png" width="250px"></img>
-### HYPERFLOOD
-<a href="#catalogue">Retour au catalogue</a>
->**UNSTABLE<br>ALLEZ DANS FLOW2 À LA PLACE.**
-
->Contrairement au shader classique, ce shader offre une solution pour les zones d'eau fermées.
-* Nom de fichier: `hyperflood.txt`
-* Utilisation de la ligne de commande: `xs hyperflood [x] [y] [z]` (Les paramètres représentent les coordonnées de la source d'eau.)
-* Ligne de commande: `xs hyperflood 3 5 3`
->1. La couleur de l'eau est contrôlée par la couleur sélectionnée dans la palette.
->2. DANGER - LIRE AVANT UTILISATION 
-<br>- LE SHADER NE SUPPORTE QUE LES SCÈNES AVEC MOINS DE 40 UNITÉS DE XYZ-VOLUMESIZE. (Vous pouvez modifier la ligne 17 pour supprimer la limite, mais réfléchissez d'abord).<br>- LIMITÉ PAR L'EXPLICATIF INTÉRIEUR DE MAGICAVOXEL, LE SHADER N'EST PAS STABLE. SI L'ESPACE DE REMPLISSAGE EST TROP GRAND, MAGICAVOXEL PEUT S'ÉCRASER.
-* Aperçu de l'image:
-
-  <img src="../img/h.png"></img>
-### DARKER
-<a href="#catalogue">Retour au catalogue</a>
-* Nom de fichier: `darker.txt`
-* Utilisation de la ligne de commande: `xs darker`
->1. Ce shader nécessite que vous mettiez l'id de la palette à 0.
->2. Ce shader n'est pas conçu pour des zones sélectionnées. (Ceci pourrait être amélioré dans les prochaines versions)
-* Aperçu de l'image:
-
-  <img src="../img/d.png" width="150px"></img><img src="../img/d1.png" width="150px"></img><img src="../img/d2.png" width="150px"></img>
+  <img src="../img/cf.png" width="250px">
 
 

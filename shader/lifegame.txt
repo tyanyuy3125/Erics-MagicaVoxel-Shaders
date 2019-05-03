@@ -8,19 +8,35 @@ e.g. xs lifegame 1
 MIT License
 */
 
-int dx[8]={-1,-1,-1,0,0,1,1,1};
-int dy[8]={1,0,-1,1,-1,1,0,-1};
+int dx[8];
+int dy[8];
 
 int scan(vec3 v){
     int cnt=0;
     for(int i=0;i<8;i++){
-        if(voxel(vec3(v.x+dx[i],v.y+dy[i],v.z))==iArgs[0])cnt++;
+        if(voxel(vec3(v.x+float(dx[i]),v.y+float(dy[i]),v.z))==iArgs[0])cnt++;
     }
     return cnt;
 }
 
 float map(vec3 v){
+    dx[0]=-1;
+    dx[1]=-1;
+    dx[2]=-1;
+    dx[3]=0;
+    dx[4]=0;
+    dx[5]=1;
+    dx[6]=1;
+    dx[7]=1;
+    dy[0]=1;
+    dy[1]=0;
+    dy[2]=-1;
+    dy[3]=1;
+    dy[4]=-1;
+    dy[5]=1;
+    dy[6]=0;
+    dy[7]=-1;
     if(scan(v)==3)return iArgs[0];
     if(scan(v)==2)return voxel(v);
-    return 0;
+    return 0.;
 }

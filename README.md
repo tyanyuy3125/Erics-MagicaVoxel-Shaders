@@ -27,7 +27,7 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 | 0.99.3 | √ | |
 
 ## Shaders and usages
->**Note** <br> - The parameters with `<>` can be ignored. Mostly, they are set to 0 as default. <br>  - The shaders are not designed for selected areas without specific explanation.
+>**Note** <br> - The parameters with `<>` can be ignored. Mostly, they are set to 0 as default. <br>  - The shaders are not designed for selected areas without specific explanation. <br>  - The documentation of deprecated/unstable shaders can be found in their folders.
 ### INDEX
 * <a href="#terrain-generator">Terrain generator</a>
 * <a href="#flow">Flow</a>
@@ -35,11 +35,7 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 * <a href="#project">Project</a>
 * <a href="#life-game">Life game</a>
 * <a href="#drop">Drop</a>
-* <a href="#blanket">Blanket</a>
 * <a href="#cube-filling">Cube filling</a>
-* <a href="#flood">Flood</a>
-* <a href="#hyperflood">[Unstable] Hyperflood</a>
-* <a href="#darker">[Deprecated] Darker</a>
 ### TERRAIN GENERATOR
 <a href="#index">back to index</a>
 >1. The older version, which cannot execute under some older GLSL versions, has been deprecated. Special thanks to those who reported bugs.
@@ -54,7 +50,7 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 >3. By using the xyz-shifting of the shader & the new *world* system of MagicaVoxel 0.99.x, you'll be able to create a large terrain map. (fig. 3)
 * Image preview:
 
-  <img src="img/tg.png" width="250px"></img><img src="img/tg1.png" width="250px"></img><img src="img/tg2.png" width="250px"></img>
+  <img src="img/tg.png" width="250px"><img src="img/tg1.png" width="250px"><img src="img/tg2.png" width="250px">
 ### FLOW
 <a href="#index">back to index</a>
 > This shader emulates the waterflow mechanics in the nature.
@@ -64,7 +60,7 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 > The voxels with given index are water source, the shader would not automatically create them, you must attach them first.
 * Image preview:
 
-  <img src="img/flowShader.png"></img>
+  <img src="img/flowShader.png">
 ### FLOW2
 <a href="#index">back to index</a>
 > In fact, it's a replacement of the unstable `hyperflood` shader.<br/>In the fig.2 of preview section, you can see the shader does provide a solution for the closed areas.
@@ -74,8 +70,8 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 > The voxels with given index are water source, the shader would not automatically create them, you must attach them first.
 * Image preview:
 
-  <img width="250px" src="img/flow2_1.png"></img>
-  <img width="250px" src="img/flow2_2.png"></img>
+  <img width="250px" src="img/flow2_1.png">
+  <img width="250px" src="img/flow2_2.png">
 
 ### PROJECT
 <a href="#index">back to index</a>
@@ -86,9 +82,9 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 >
 * Image preview:
 
-  <img width="250px" src="img/pro.png"></img>
-  <img width="250px" src="img/pro1.png"></img>
-  <img width="250px" src="img/pro2.gif"></img>
+  <img width="250px" src="img/pro.png">
+  <img width="250px" src="img/pro1.png">
+  <img width="250px" src="img/pro2.gif">
 ### LIFE GAME
 <a href="#index">back to index</a>
 * File name: `lifegame.txt`
@@ -97,9 +93,9 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 > Designed for x-y plane. Use single color in your scene, or the shader will destroy it.
 * Image preview:
 
-  <img src="img/l1.png" width="250px"></img>
-  <img src="img/l2.png" width="250px"></img>
-  <img src="img/l3.png" width="250px"></img>
+  <img src="img/l1.png" width="250px">
+  <img src="img/l2.png" width="250px">
+  <img src="img/l3.png" width="250px">
 ### DROP
 <a href="#index">back to index</a>
 * File name: `drop.txt`
@@ -108,25 +104,7 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 > This shader simulates the water drop process.
 * Image preview:
 
-  <img src="img/dr1.png" width="120px"></img>
-  <img src="img/dr2.png" width="120px"></img>
-  <img src="img/dr3.png" width="120px"></img>
-  <img src="img/dr4.png" width="120px"></img>
-  <img src="img/dr5.png" width="120px"></img>
-### BLANKET
-<a href="#index">back to index</a>
-* File name: `blanket.txt`
-* Command-line usages: 
-  `xs blanket [voxel-color] <noise-seed> <noise-scale> <threshold (0~2 recommend)>`
-* Command-line e.g.: `xs blanket 1 1248343 20 1.4`
-* Minimal edition e.g.: `xs blanket 1`
->1. The shader will only cover the areas that are not covered. (Like snow)
->2. Esp. if both Terrain Generator & Blanket Shader have the same noise seed as well as scale, and the xyz-shifting of the Terrain Generator is zero, the result of the two shaders mixed together will be like realistic snow cover of high mountains. (fig. 3)
-* Image preview:
-
-  <img src="img/b.png" width="250px"></img>
-  <img src="img/b1.png" width="250px"></img>
-  <img src="img/b2.png" width="250px"></img>
+  <img src="img/dr1.png" width="120px"><img src="img/dr2.png" width="120px"><img src="img/dr3.png" width="120px"><img src="img/dr4.png" width="120px"><img src="img/dr5.png" width="120px">
 ### CUBE FILLING
 <a href="#index">back to index</a>
 * File name: `cubefill.txt`
@@ -138,39 +116,8 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
   2. `xs cubefill 0 50 50 50 10 216` - Take coordinates (50,50,50) as the center, create a red cube with a side length of 10 units.
 * Image preview:
 
-  <img src="img/cf.png" width="250px"></img>
+  <img src="img/cf.png" width="250px">
 >This shader will not empty your scene.
-### FLOOD
-<a href="#index">back to index</a>
-* File name: `flood.txt`
-* Command-line usage: `xs flood [height] [color]`
-* Command-line e.g.: `xs flood 60 169`
->
-* Image preview:
 
-  <img src="img/f.png" width="250px"></img>
-### HYPERFLOOD
-<a href="#index">back to index</a>
->**UNSTABLE. DO NOT USE.<br>GO TO FLOW2 INSTEAD.**
-
->Unlike the classic flood shader, this shader provides a solution for closed water area.
-* File name: `hyperflood.txt`
-* Command-line usage: `xs hyperflood [x] [y] [z]` (The parameters represent the coordinate of the water source.)
-* Command-line e.g.: `xs hyperflood 3 5 3`
->1. The color of water is controlled by selected color in the palette.
->2. DANGER - READ BEFORE USE
-<br>- THE SHADER ONLY SUPPORTS SCENES WITH LESS THAN 40 UNITS OF XYZ-VOLUMESIZE. (You can change line 17 to remove the limit, but think over first.)
-<br>- LIMITED BY THE INNER EXPLAINATOR OF MAGICAVOXEL, THE SHADER IS NOT STABLE. IF THE FILLING SPACE IS TOO LARGE, MAGICAVOXEL MAY CRASH.
-* Image preview:
-
-  <img src="img/h.png"></img>
-### DARKER
-<a href="#index">back to index</a>
-* File name: `darker.txt`
-* Command-line usage: `xs darker`
-> This shader requires you to set the palette id to 0. 
-* Image preview:
-
-  <img src="img/d.png" width="150px"></img><img src="img/d1.png" width="150px"></img><img src="img/d2.png" width="150px"></img>
 
 
