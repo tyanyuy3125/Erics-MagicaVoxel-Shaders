@@ -6,7 +6,7 @@ Shaders for MagicaVoxel including Terrain Generator, Advanced Flood System etc.
 - <a href="./i18n/README-fr.md">Français</a> - translated by <a href="http://moiscript.weebly.com/magicavoxel.html">Pilou</a> - Authorized reproduce, target version: `0.0.7.0`
 
 ## Project Info
-* Current version: `0.0.9.0`
+* Current version: `0.0.9.5`
 * State: `LTS`
 * Tested with `MagicaVoxel 0.99.3 for Windows`
 * Released under `MIT License`
@@ -30,6 +30,7 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 >**Note** <br> - The parameters with `<>` can be ignored. Mostly, they are set to 0 as default. <br>  - The shaders are not designed for selected areas without specific explanation. <br>  - The documentation of deprecated/unstable shaders can be found in their folders.
 ### INDEX
 * <a href="#terrain-generator">Terrain generator</a>
+* <a href="#terrain-generator-2">Terrain generator 2</a>
 * <a href="#flow">Flow</a>
 * <a href="#flow2">Flow2</a>
 * <a href="#project">Project</a>
@@ -51,6 +52,20 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 * Image preview:
 
   <img src="img/tg.png" width="250px"><img src="img/tg1.png" width="250px"><img src="img/tg2.png" width="250px">
+### TERRAIN GENERATOR 2
+<a href="#index">back to index</a>
+>1. In tergen2, the terrain that generated overlays over existing voxels.
+>2. The noise generation method is provided by ashima/webgl-noise: Copyright (C) 2011 Ashima Arts. All rights reserved.
+* File name: `tergen2.txt`
+* Command-line usage: `xs tergen2 [seed] [altitude] 
+[noise-scale] [voxel-color] <void-voxel-color> <vertical-shifting> <x-shifting> <y-shifting>`
+* Command-line e.g.: `xs tergen2 19260817 16 70 1 -1 -10 -50 -10`
+* Minimal edition e.g.: `xs tergen2 19260817 16 70 1`
+>Set void-voxel-color to -1 to not remove the original scene.
+* Image preview:
+
+  <img src="img/tg2_2.png" width="250px">
+  <img src="img/tg2_1.png" width="250px">
 ### FLOW
 <a href="#index">back to index</a>
 > This shader emulates the waterflow mechanics in the nature.
