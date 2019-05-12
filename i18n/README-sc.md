@@ -30,6 +30,7 @@
 >**注意** <br> - 具有 `<>` 的参数可以被忽略。多数时候，他们被默认设置为0。<br> - 除非特别说明，Shader们不支持选择区域处理。<br> - 不提供弃用和不稳定着色器的翻译。
 ### <p id="index">目录</p>
 * <a href="#terrain-generator">Terrain generator</a>
+* <a href="#terrain-generator-2">Terrain generator 2</a>
 * <a href="#flow">Flow</a>
 * <a href="#flow2">Flow2</a>
 * <a href="#project">Project</a>
@@ -51,6 +52,19 @@
 * 图片预览:
 
   <img src="../img/tg.png" width="250px"><img src="../img/tg1.png" width="250px"><img src="../img/tg2.png" width="250px">
+### TERRAIN GENERATOR 2
+<a href="#index">回到目录</a>
+>1. 在地形生成器2中，地形覆盖在已存在的体素上。
+>2. 噪波生成提供方为 ashima/webgl-noise: Copyright (C) 2011 Ashima Arts 保留所有权利
+* 文件名称: `tergen2.txt`
+* 命令行用法: `xs tergen2 [seed] [altitude] 
+[noise-scale] [voxel-color] <void-voxel-color> <vertical-shifting> <x-shifting> <y-shifting>`
+* 命令行用法示例: `xs tergen2 19260817 16 70 1 -1 -10 -50 -10`
+* 命令行用法最简示例: `xs tergen2 19260817 16 70 1`
+>把 void-voxel-color 设置为 -1 将不会清空场景。
+* 图片预览:
+
+  <img src="../img/tg2_2.png" width="250px"><img src="../img/tg2_1.png" width="250px">
 ### FLOW
 <a href="#index">回到目录</a>
 > 该shader模拟自然界中的水流效果。
