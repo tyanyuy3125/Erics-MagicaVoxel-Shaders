@@ -14,7 +14,7 @@ The shaders should be written in GL Shading Language. It supports most of C lang
  | iRand | vec4 | random number | |
  | iArgs[8] | float | user args | |
  | voxel(vec3 v) | float | get voxel color index at position v | |
- ## EDITING GUIDES
+ ## Editing Guides
  * The shader's format should be txt instead of glsl.
  * Your code should begin like this: 
 ```
@@ -29,7 +29,6 @@ e.g. [Usage example]
 MIT License
 */
 ```
- * Use functions often
  * Don't name the variable with the only single characters **without a specific meaning** (like `a`, `bbb`, `___` etc).
  * Move the shader file to `unstable` directory if you think your shader needs optimization.
  * Don't forget to add the related description of your shader to `README.md`, the original file may be the example for you.

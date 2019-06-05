@@ -64,8 +64,7 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 >Set void-voxel-color to -1 to not remove the original scene.
 * Image preview:
 
-  <img src="img/tg2_2.png" width="250px">
-  <img src="img/tg2_1.png" width="250px">
+  <img src="img/tg2_2.png" width="250px"><img src="img/tg2_1.png" width="250px">
 ### CAVE
 <a href="#index">back to index</a>
 >1. The 3d noise generator.
