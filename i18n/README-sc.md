@@ -6,7 +6,7 @@
 为MagicaVoxel设计的Shader，包含地形生成器，增强的洪流系统等。
 
 ## 项目信息
-* 当前版本: `0.0.9.0`
+* 当前版本: `0.1.0.0`
 * 状态: `长期支持`
 * 使用 `MagicaVoxel 0.99.3 for Windows` 测试
 * 在 `MIT License` 下发行
@@ -31,6 +31,7 @@
 ### <p id="index">目录</p>
 * <a href="#terrain-generator">Terrain generator</a>
 * <a href="#terrain-generator-2">Terrain generator 2</a>
+* <a href="#cave">Cave</a>
 * <a href="#flow">Flow</a>
 * <a href="#flow2">Flow2</a>
 * <a href="#project">Project</a>
@@ -40,7 +41,7 @@
 ### TERRAIN GENERATOR
 <a href="#index">回到目录</a>
 >1. 更旧的版本由于不支持一些古老的GLSL版本已经被舍弃，十分感谢bug提交者的贡献。
->2. 噪波生成提供方为 ashima/webgl-noise: Copyright (C) 2011 Ashima Arts 保留所有权利
+>2. 噪波生成提供方为 ashima/webgl-noise: Copyright (C) 2011 Ashima Arts 保留所有权利。
 * 文件名称: `tergen.txt`
 * 命令行用法: `xs tergen [seed] [altitude] 
 [noise-scale] [voxel-color] <void-voxel-color> <vertical-shifting> <x-shifting> <y-shifting>`
@@ -55,7 +56,7 @@
 ### TERRAIN GENERATOR 2
 <a href="#index">回到目录</a>
 >1. 在地形生成器2中，地形覆盖在已存在的体素上。
->2. 噪波生成提供方为 ashima/webgl-noise: Copyright (C) 2011 Ashima Arts 保留所有权利
+>2. 噪波生成提供方为 ashima/webgl-noise: Copyright (C) 2011 Ashima Arts 保留所有权利。
 * 文件名称: `tergen2.txt`
 * 命令行用法: `xs tergen2 [seed] [altitude] 
 [noise-scale] [voxel-color] <void-voxel-color> <vertical-shifting> <x-shifting> <y-shifting>`
@@ -65,6 +66,18 @@
 * 图片预览:
 
   <img src="../img/tg2_2.png" width="250px"><img src="../img/tg2_1.png" width="250px">
+### CAVE
+<a href="#index">回到目录</a>
+>1. 这是三维噪波生成器。
+>2. 噪波生成提供方为 ashima/webgl-noise: Copyright (C) 2011 Ashima Arts 保留所有权利。
+* 文件名称: `cave.txt`
+* 命令行用法: `xs cave [seed] [noise-scale] [voxel-color] <void-voxel-color (-1 for not emptying the scene)> <vertical-shifting> <x-shifting> <y-shifting>`
+* 命令行用法示例: `xs cave 19260817 75 1 -1 10 10 10`
+* 命令行用法最简示例: `xs cave 19260817 75 1 -1`
+>把 void-voxel-color 设置为 -1 将不会清空场景。
+* 图片预览:
+
+  <img width="250px" src="../img/cave.png">
 ### FLOW
 <a href="#index">回到目录</a>
 > 该shader模拟自然界中的水流效果。

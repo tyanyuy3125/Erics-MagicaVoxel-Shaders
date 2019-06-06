@@ -1,12 +1,14 @@
 # Eric's MagicaVoxel Shaders
 Shaders for MagicaVoxel including Terrain Generator, Advanced Flood System etc.
 
+**IMPORTANT** The bugs related to the executing failure have been all fixed. Feel free to have a try if you came across the problems before.
+
 ## Internationalization
-- <a href="./i18n/README-sc.md">简体中文</a> - translated by <a href="http://github.com/codingeric">CodingEric</a>, target version: `0.0.9.0`
+- <a href="./i18n/README-sc.md">简体中文</a> - translated by <a href="http://github.com/codingeric">CodingEric</a>, target version: `0.1.0.0`
 - <a href="./i18n/README-fr.md">Français</a> - translated by <a href="http://moiscript.weebly.com/magicavoxel.html">Pilou</a> - Authorized reproduce, target version: `0.0.7.0`
 
 ## Project Info
-* Current version: `0.0.9.9`
+* Current version: `0.1.0.0`
 * State: `LTS`
 * Tested with `MagicaVoxel 0.99.3 for Windows`
 * Released under `MIT License`
@@ -25,6 +27,9 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 | 0.99.1 | √ | Cannot show color id in the command panel |
 | 0.99.2 | √ | |
 | 0.99.3 | √ | |
+
+## Contribution
+Feel free to make a PR as long as you've followed the contributing guidelines.
 
 ## Shaders and usages
 >**Note** <br> - The parameters with `<>` can be ignored. Mostly, they are set to 0 as default. <br>  - The shaders are not designed for selected areas without specific explanation. <br>  - The documentation of deprecated/unstable shaders can be found in their folders.
@@ -68,7 +73,7 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
   <img src="img/tg2_2.png" width="250px"><img src="img/tg2_1.png" width="250px">
 ### CAVE
 <a href="#index">back to index</a>
->1. The 3d noise generator.
+>1. This is the 3d noise generator.
 >2. The noise generation method is provided by ashima/webgl-noise: Copyright (C) 2011 Ashima Arts. All rights reserved.
 * File name: `cave.txt`
 * Command-line usage: `xs cave [seed] [noise-scale] [voxel-color] [void-voxel-color (-1 for not emptying the scene)] [vertical-shifting] [x-shifting] [y-shifting]`

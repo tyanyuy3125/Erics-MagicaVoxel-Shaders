@@ -15,10 +15,10 @@ MIT License
 
 float map(vec3 v){
     if(iArgs[6]!=0.){
-        if(iArgs[0]==0&&((v.x>=iArgs[1]&&v.x<=iArgs[4]||v.x>=iArgs[4]&&v.x<=iArgs[1])&&(v.y>=iArgs[2]&&v.y<=iArgs[5]||v.y>=iArgs[5]&&v.y<=iArgs[2])&&(v.z>=iArgs[3]&&v.z<=iArgs[6]||v.z>=iArgs[6]&&v.z<=iArgs[3]))){
+        if(iArgs[0]==0.&&((v.x>=iArgs[1]&&v.x<=iArgs[4]||v.x>=iArgs[4]&&v.x<=iArgs[1])&&(v.y>=iArgs[2]&&v.y<=iArgs[5]||v.y>=iArgs[5]&&v.y<=iArgs[2])&&(v.z>=iArgs[3]&&v.z<=iArgs[6]||v.z>=iArgs[6]&&v.z<=iArgs[3]))){
             return iArgs[7];
         }
-        else if(iArgs[0]==1&&(((v.x==iArgs[1]||v.x==iArgs[4])&&(v.y==iArgs[5]||v.y==iArgs[2])&&(v.z<=iArgs[6]&&v.z>=iArgs[3]||v.z<=iArgs[3]&&v.z>=iArgs[6]))||((v.z==iArgs[3]||v.z==iArgs[6])&&(v.y==iArgs[5]||v.y==iArgs[2])&&(v.x<=iArgs[4]&&v.x>=iArgs[1]||v.x<=iArgs[1]&&v.x>=iArgs[4]))||((v.z==iArgs[3]||v.z==iArgs[6])&&(v.x==iArgs[4]||v.x==iArgs[1])&&(v.y<=iArgs[5]&&v.y>=iArgs[2]||v.y<=iArgs[2]&&v.y>=iArgs[5])))){
+        else if(iArgs[0]==1.&&(((v.x==iArgs[1]||v.x==iArgs[4])&&(v.y==iArgs[5]||v.y==iArgs[2])&&(v.z<=iArgs[6]&&v.z>=iArgs[3]||v.z<=iArgs[3]&&v.z>=iArgs[6]))||((v.z==iArgs[3]||v.z==iArgs[6])&&(v.y==iArgs[5]||v.y==iArgs[2])&&(v.x<=iArgs[4]&&v.x>=iArgs[1]||v.x<=iArgs[1]&&v.x>=iArgs[4]))||((v.z==iArgs[3]||v.z==iArgs[6])&&(v.x==iArgs[4]||v.x==iArgs[1])&&(v.y<=iArgs[5]&&v.y>=iArgs[2]||v.y<=iArgs[2]&&v.y>=iArgs[5])))){
             return iArgs[7];
         }
         else{
@@ -30,7 +30,7 @@ float map(vec3 v){
         float cte1=-1.;
         float a3=iArgs[4];
         float p1X,p1Y,p1Z,p2X,p2Y,p2Z;
-        if(int(a3)&1){
+        if(floor(a3/2.)*2.!=a3){
             cte=(a3-1.)/2.;
             cte1+=a3-cte;
             p1X=iArgs[1]-cte;
@@ -42,7 +42,7 @@ float map(vec3 v){
         }
         else{
             cte=a3/2.;
-            cte1+=a3/2;
+            cte1+=a3/2.;
             p1X=iArgs[1]-cte;
             p1Y=iArgs[2]-cte;
             p1Z=iArgs[3]-cte;
@@ -50,10 +50,10 @@ float map(vec3 v){
             p2Y=iArgs[2]+cte1;
             p2Z=iArgs[3]+cte1;
         }
-        if(iArgs[0]==0&&((v.x>=p1X&&v.x<=p2X||v.x>=p2X&&v.x<=p1X)&&(v.y>=p1Y&&v.y<=p2Y||v.y>=p2Y&&v.y<=p1Y)&&(v.z>=p1Z&&v.z<=p2Z||v.z>=p2Z&&v.z<=p1Z))){
+        if(iArgs[0]==0.&&((v.x>=p1X&&v.x<=p2X||v.x>=p2X&&v.x<=p1X)&&(v.y>=p1Y&&v.y<=p2Y||v.y>=p2Y&&v.y<=p1Y)&&(v.z>=p1Z&&v.z<=p2Z||v.z>=p2Z&&v.z<=p1Z))){
             return iArgs[5];
         }
-        else if(iArgs[0]==1&&(((v.x==p1X||v.x==p2X)&&(v.y==p2Y||v.y==p1Y)&&(v.z<=p2Z&&v.z>=p1Z||v.z<=p1Z&&v.z>=p2Z))||((v.z==p1Z||v.z==p2Z)&&(v.y==p2Y||v.y==p1Y)&&(v.x<=p2X&&v.x>=p1X||v.x<=p1X&&v.x>=p2X))||((v.z==p1Z||v.z==p2Z)&&(v.x==p2X||v.x==p1X)&&(v.y<=p2Y&&v.y>=p1Y||v.y<=p1Y&&v.y>=p2Y)))){
+        else if(iArgs[0]==1.&&(((v.x==p1X||v.x==p2X)&&(v.y==p2Y||v.y==p1Y)&&(v.z<=p2Z&&v.z>=p1Z||v.z<=p1Z&&v.z>=p2Z))||((v.z==p1Z||v.z==p2Z)&&(v.y==p2Y||v.y==p1Y)&&(v.x<=p2X&&v.x>=p1X||v.x<=p1X&&v.x>=p2X))||((v.z==p1Z||v.z==p2Z)&&(v.x==p2X||v.x==p1X)&&(v.y<=p2Y&&v.y>=p1Y||v.y<=p1Y&&v.y>=p2Y)))){
             return iArgs[5];
         }
         else{

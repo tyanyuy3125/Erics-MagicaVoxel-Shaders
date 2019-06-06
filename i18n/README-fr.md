@@ -13,11 +13,8 @@ Installez ces shaders en copiant les fichiers du répertoire shader de ce projet
 * <a href="#flow2">Flow2</a>
 * <a href="#project">Project</a>
 * <a href="#life-game">Life game</a>
-* <a href="#blanket">Blanket</a>
 * <a href="#cube-filling">Cube filling</a>
 * <a href="#flood">Flood</a>
-* <a href="#hyperflood">[Unstable] Hyperflood</a>
-* <a href="#darker">[Deprecated] Darker Darker</a>
 ### TERRAIN GENERATOR
 <a href="#catalogue">Retour au catalogue</a>
 * Nom de fichier: `tergen.txt`
