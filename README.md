@@ -31,6 +31,9 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 ## Contribution
 Feel free to make a PR as long as you've followed the contributing guidelines.
 
+## Debug
+See <a href="https://github.com/CodingEric/Erics-MagicaVoxel-Shaders/issues/2#issuecomment-449905598">this issue</a>.
+
 ## Shaders and usages
 >**Note** <br> - The parameters with `<>` can be ignored. Mostly, they are set to 0 as default. <br>  - The shaders are not designed for selected areas without specific explanation. <br>  - The documentation of deprecated/unstable shaders can be found in their folders.
 ### INDEX
