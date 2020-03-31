@@ -51,7 +51,6 @@ See <a href="https://github.com/CodingEric/Erics-MagicaVoxel-Shaders/issues/2#is
 * <a href="#cubefill">cubefill</a>
 ### tergen
 <a href="#index">index</a>
-* File name: `tergen.txt`
 * Usage:
 ```
 xs tergen [seed] [altitude] 
@@ -70,7 +69,6 @@ xs tergen 19260817 40 90 1
   <img src="img/tg.png" width="250px"><img src="img/tg1.png" width="250px"><img src="img/tg2.png" width="250px">
 ### tergen2
 <a href="#index">index</a>
-* File name: `tergen2.txt`
 * Usage: 
 ```
 xs tergen2 [seed] [altitude] 
@@ -87,7 +85,6 @@ xs tergen2 19260817 16 70 1
   <img src="img/tg2_2.png" width="250px"><img src="img/tg2_1.png" width="250px">
 ### cave
 <a href="#index">index</a>
-* File name: `cave.txt`
 * Usage:
 ```
 xs cave [seed] [noise-scale] [voxel-color] [void-voxel-color (-1 for not emptying the scene)] [vertical-shifting] [x-shifting] [y-shifting]
@@ -103,7 +100,6 @@ xs cave 19260817 75 1 -1
   <img width="250px" src="img/cave.png">
 ### flow
 <a href="#index">index</a>
-> This shader emulates the waterflow mechanics in the nature.
 * Usage: 
 ```
 xs flow [color-index]
@@ -135,7 +131,7 @@ If you're tired of keeping executing this, consider the `-n [num interations]` p
 
 ### project
 <a href="#index">index</a>
->Project the color of a given x-y plane to the suface under it.
+> Supports x-y plane only. (To be fixed)
 * Usage: 
 ```
 xs project [height]
