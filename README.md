@@ -4,11 +4,11 @@ aka EMVS.
 Shaders for MagicaVoxel including Terrain Generator, Advanced Flood System etc.
 
 ## Internationalization
-- <a href="./i18n/README-sc.md">简体中文</a> - translated by <a href="http://github.com/codingeric">CodingEric</a>, target version: `54`
+- <a href="./i18n/README-sc.md">简体中文</a> - translated by <a href="http://github.com/codingeric">CodingEric</a>, target version: `55`
 - <a href="./i18n/README-fr.md">Français</a> - translated by <a href="http://moiscript.weebly.com/magicavoxel.html">Pilou</a> - Authorized reproduce, target version: `0.0.7.0`
 
 ## Project Info
-* Current version: `54`
+* Current version: `55`
 * Released under `MIT License`
 
 ## Installation
@@ -18,7 +18,7 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 
 | Version | Is compatible | Note |
 | ------ | :------: | ------ |
-| 0.99.5 and before | not compatible after EMVS version 54 | |
+| 0.99.5 and before | not compatible after EMVS version 55 | |
 | 0.99.5.1 and after | all EMVS versions are compatible  | |
 
 ## Roadmap
@@ -32,7 +32,7 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 See <a href="https://github.com/CodingEric/Erics-MagicaVoxel-Shaders/issues/2#issuecomment-449905598">this issue</a>.
 
 ## Shaders
-Starting from version 54, EMVS **no longer** supports command execution. Please configure the relevant parameters through the graphical options provided by MagicaVoxel 0.99.5.1 onwards.
+Starting from version 55, EMVS **no longer** supports command execution. Please configure the relevant parameters through the graphical options provided by MagicaVoxel 0.99.5.1 onwards.
 
 At the same time, for the graphical options are very clear, the explanations of parameters are not provided in this document. 
 
