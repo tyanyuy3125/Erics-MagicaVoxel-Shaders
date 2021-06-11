@@ -1,12 +1,10 @@
-/*
-Via Github@CodingEric
-If you like this project, give it a star!
-GL Shading Language.
-Flow2 Shader for Magicavoxel
-Command-line usage: 'xs flow2 [color-index]'
-e.g. xs flow2 1
-MIT License
-*/
+// xs_begin
+// arg : { var = 'color' name = 'Color' value = '1' range = '0 255' step = '1' precision = '0' }
+// xs_end
+
+// Procedural closed-area filler
+// MIT License
+// Copyright (c) 2021 Tianyu Huang
 
 vec3 location;
 bool isNull=true;

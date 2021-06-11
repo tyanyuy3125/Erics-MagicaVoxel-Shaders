@@ -1,16 +1,20 @@
-/*
-Via Github@CodingEric
-If you like this project, give it a star!
-GL Shading Language.
-Terrain Generator Shader for Magicavoxel
-Command-line usage: 'xs tergen [seed] [altitude] [noise-scale] [voxel-color] [void-voxel-color (-1 for not emptying the scene)] [vertical-shifting] [x-shifting] [y-shifting]'
-e.g. xs tergen 19260817 40 90 1 -1 10 -50 -10
-It is recommended that you set the scene size to 126x126x126 for the best view.
-Noise generation algorithm provider: Copyright (C) 2011 Ashima Arts. All rights reserved.
-MIT License
-*/
+// xs_begin
+// arg : { var = 'seed'	name = 'Seed'	value = '2048' range = '1 2147483648' step = '1' precision = '0' }
+// arg : { var = 'altitude'	name = 'Altitude'	value = '128' range = '0 256' step = '1' precision = '0' }
+// arg : { var = 'map_scale'	name = 'Map Scale'	value = '192' range = '0 2048' step = '1' precision = '0' }
+// arg : { var = 'v_color'	name = 'Color'	value = '1' range = '0 255'	step = '1' precision = '0' }
+// arg : { var = 'air_color'	name = 'Air Color'	value = '-1' range = '-1 255'	step = '1' precision = '0' }
+// arg : { var = 'x_shifting'	name = 'X-Offset'	value = '0' range = '-2147483648 2147483648'	step = '1' precision = '0' }
+// arg : { var = 'y_shifting'	name = 'Y-Offset'	value = '0' range = '-2147483648 2147483648'	step = '1' precision = '0' }
+// arg : { var = 'z_shifting'	name = 'Z-Offset'	value = '0' range = '-2147483648 2147483648'	step = '1' precision = '0' }
+// arg : { var = 'strength_1'	name = 'Layer 1'	value = '1' range = '-10 10'	step = '0.001' precision = '4' }
+// arg : { var = 'strength_2'	name = 'Layer 2'	value = '0.25' range = '-10 10'	step = '0.001' precision = '4' }
+// arg : { var = 'strength_3'	name = 'Layer 3'	value = '0.0625' range = '-10 10'	step = '0.001' precision = '4' }
+// xs_end
 
-float seed;
+// Terrain Generator
+// MIT License
+// Copyright (c) 2021 Tianyu Huang
 
 vec3 mod289(vec3 x) {
   return x - floor(x * (1.0 / 289.0)) * 289.0;
@@ -55,20 +59,13 @@ float snoise(vec2 v)
 }
 
 float map(vec3 v) {
-  float yShift=iArgs[7];
-  float xShift=iArgs[6];
-  float verticalShift=iArgs[5];
-  float vvcolor=iArgs[4];
-  float vcolor=iArgs[3];
-  float mapScale=iArgs[2];
-  seed=iArgs[0];
-  float height=snoise(vec2((v.x+xShift)/mapScale,(v.y+yShift)/mapScale))
-  +snoise(vec2((v.x+xShift)/(0.25*mapScale),(v.y+yShift)/(0.25*mapScale)))*0.125;
-  +snoise(vec2((v.x+xShift)/(0.125*mapScale),(v.y+yShift)/(0.125*mapScale)))*0.075;
-  height=pow(0.4,height)*iArgs[1];
-  if(v.z<=height+verticalShift){
-    return vcolor;
+  float height=snoise(vec2((v.x+x_shifting)/map_scale,(v.y+y_shifting)/map_scale))*strength_1
+  +snoise(vec2((v.x+x_shifting)/(0.25*map_scale),(v.y+y_shifting)/(0.25*map_scale)))*strength_2
+  +snoise(vec2((v.x+x_shifting)/(0.0625*map_scale),(v.y+y_shifting)/(0.0625*map_scale)))*strength_3;
+  height=(0.5*atan(height)+0.5)*altitude;
+  if(v.z<=height+z_shifting){
+    return v_color;
   }
-  if(vvcolor==-1.)return voxel(v);
-  return vvcolor;
+  if(air_color==-1.)return voxel(v);
+  return air_color;
 }

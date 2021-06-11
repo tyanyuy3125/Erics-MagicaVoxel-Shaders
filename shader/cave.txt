@@ -1,16 +1,16 @@
-/*
-Via Github@CodingEric
-If you like this project, give it a star!
-GL Shading Language.
-Cave Shader for Magicavoxel
-Command-line usage: 'xs cave [seed] [noise-scale] [voxel-color] [void-voxel-color (-1 for not emptying the scene)] [vertical-shifting] [x-shifting] [y-shifting]'
-e.g. xs cave 19260817 75 1 -1 10 10 10
-It is recommended that you set the scene size to 126x126x126 for the best view.
-Noise generation algorithm provider: Copyright (C) 2011 Ashima Arts. All rights reserved.
-MIT License
-*/
+// xs_begin
+// arg : { var = 'seed'	name = 'Seed'	value = '2048' range = '1 2147483648' step = '1' precision = '0' }
+// arg : { var = 'map_scale'	name = 'Map Scale'	value = '64' range = '0 2048' step = '1' precision = '0' }
+// arg : { var = 'v_color'	name = 'Color'	value = '1' range = '0 255'	step = '1' precision = '0' }
+// arg : { var = 'air_color'	name = 'Air Color'	value = '-1' range = '-1 255'	step = '1' precision = '0' }
+// arg : { var = 'x_shifting'	name = 'X-Offset'	value = '0' range = '-2147483648 2147483648'	step = '1' precision = '0' }
+// arg : { var = 'y_shifting'	name = 'Y-Offset'	value = '0' range = '-2147483648 2147483648'	step = '1' precision = '0' }
+// arg : { var = 'z_shifting'	name = 'Z-Offset'	value = '0' range = '-2147483648 2147483648'	step = '1' precision = '0' }
+// xs_end
 
-float seed;
+// 3D Noise Generator
+// MIT License
+// Copyright (c) 2021 Tianyu Huang
 
 vec3 mod289(vec3 x) {
   return x - floor(x * (1.0 / 289.0)) * 289.0;
@@ -79,16 +79,12 @@ float snoise(vec3 v)
 }
 
 float map(vec3 v){
-  seed=iArgs[0]-floor(iArgs[0]/16777216.)*16777216.;
-  float scale=iArgs[1];
-  float vs = iArgs[4];
-  float xs = iArgs[5];
-  float ys = iArgs[6];
-  float genNoise = snoise(vec3((v.x+xs)/scale,(v.y+ys)/scale,(v.z+vs)/scale));
+  seed=seed-floor(seed/16777216.)*16777216.;
+  float genNoise = snoise(vec3((v.x+x_shifting)/map_scale,(v.y+y_shifting)/map_scale,(v.z+z_shifting)/map_scale));
   if(genNoise<0.2){
-    return iArgs[2];
+    return v_color;
   }else{
     if(iArgs[3]==-1.)return voxel(v);
-    return iArgs[3];
+    return air_color;
   }
 }

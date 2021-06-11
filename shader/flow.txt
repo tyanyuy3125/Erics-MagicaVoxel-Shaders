@@ -1,12 +1,10 @@
-/*
-Via Github@CodingEric
-If you like this project, give it a star!
-GL Shading Language.
-Flow Shader for Magicavoxel
-Command-line usage: 'xs flow [color-index]'
-e.g. xs flow 1
-MIT License
-*/
+// xs_begin
+// arg : { var = 'color' name = 'Color' value = '1' range = '0 255' step = '1' precision = '0' }
+// xs_end
+
+// Waterflow Emulator
+// MIT License
+// Copyright (c) 2021 Tianyu Huang
 
 vec3 location;
 bool isNull=true;
@@ -46,7 +44,7 @@ bool isAround(vec3 v,float tIndex){
 }
 
 float map(vec3 v){
-    float targetIndex=iArgs[0];
+    float targetIndex=color;
     if(voxel(v)!=0.)return voxel(v);
     if(voxel(vec3(v.x,v.y,v.z+1.))==targetIndex||voxel(v)==targetIndex){
         return targetIndex;

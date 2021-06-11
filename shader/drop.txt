@@ -1,25 +1,23 @@
-/*
-Via Github@CodingEric
-If you like this project, give it a star!
-GL Shading Language.
-Drop Shader for Magicavoxel
-Command-line usage: 'xs drop [color-index]'
-e.g. xs drop 1
-MIT License
-*/
+// xs_begin
+// arg : { var = 'color' name = 'Color' value = '1' range = '0 255' step = '1' precision = '0' }
+// xs_end
+
+// Shiftting down impending voxel with given color
+// MIT License
+// Copyright (c) 2021 Tianyu Huang
 
 bool chk(vec3 v){
-    if(voxel(vec3(v.x,v.y,v.z+1.))==iArgs[0]&&voxel(v)==0.){
+    if(voxel(vec3(v.x,v.y,v.z+1.))==color&&voxel(v)==0.){
         return true;
     }
     return false;
 }
 
 float map(vec3 v){
-    if(voxel(v)==iArgs[0]&&voxel(vec3(v.x,v.y,v.z-1.))==0.){
+    if(voxel(v)==color&&voxel(vec3(v.x,v.y,v.z-1.))==0.){
         return 0.;
     }else if(chk(v)){
-        return iArgs[0];
+        return color;
     }else{
         return voxel(v);
     }

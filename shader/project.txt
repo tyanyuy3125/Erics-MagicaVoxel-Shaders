@@ -1,12 +1,10 @@
-/*
-Via Github@CodingEric
-If you like this project, give it a star!
-GL Shading Language.
-Project Shader for Magicavoxel
-Command-line usage: 'xs project [height]' (Each parameter is required or the code won't work correctly.)
-e.g. xs project 64
-MIT License
-*/
+// xs_begin
+// arg : { var = 'z_index' name = 'Z-index' value = '1' range = '0 255' step = '1' precision = '0' }
+// xs_end
+
+// Projecting a 2D plane to 3D object below it
+// MIT License
+// Copyright (c) 2021 Tianyu Huang
 
 int layerHeight;
 float x,y,z;
@@ -24,7 +22,7 @@ int computeLayers(){
 }
 
 float map(vec3 v){
-    layerHeight=int(iArgs[0]);
+    layerHeight=int(z_index);
     x=v.x,y=v.y,z=v.z;
     if(float(layerHeight)<=z||voxel(v)==0.)return voxel(v);
     float color=getColor();
