@@ -7,8 +7,10 @@ Shaders for MagicaVoxel including Terrain Generator, Advanced Flood System etc.
 - <a href="./i18n/README-sc.md">简体中文</a> - translated by <a href="http://github.com/codingeric">CodingEric</a>, target version: `55`
 - <a href="./i18n/README-fr.md">Français</a> - translated by <a href="http://moiscript.weebly.com/magicavoxel.html">Pilou</a> - Authorized reproduce, target version: `0.0.7.0`
 
+( I am looking for new French Translations. )
+
 ## Project Info
-* Current version: `55`
+* Current version: `56`
 * Released under `MIT License`
 
 ## Installation
@@ -24,7 +26,6 @@ Copy the .txt files from the `shader` directory in this project to the `shader` 
 ## Roadmap
 
 * Cloud generator
-* Implement more options (turbulence and so on) to the terrain generator.
 * Tree randomizer.
 
 ## Debugging
@@ -51,17 +52,15 @@ At the same time, for the graphical options are very clear, the explanations of 
 
 "tergen" is a 2d noise generator.
 
-* Set Air Color to -1 to retain existing voxels.
-* By using the xyz-shifting of the shader & the new *world* system of MagicaVoxel 0.99.x, you'll be able to create a large terrain map. (fig. 3)
+* Set Air Color to -1, the voxel area without terrain will not be destroyed, but in the voxel area with terrain, the original voxel will be replaced by the new terrain.
+* Set Air Color to -2, all voxels that already exist in the scene will not be destroyed. 
 
 <img src="img/tg.png" width="250px"><img src="img/tg1.png" width="250px"><img src="img/tg2.png" width="250px">
 
 ### tergen2
 <a href="#index">index</a>
 
-"tergen2" is a modified version of "tergen", which creates terrain only above the existing voxels.
-
-Set Air Color to -1 to retain existing voxels.
+"tergen2" is a modified version of "tergen", which creates terrain only above the existing voxels or selected area.
 
 <img src="img/tg2_2.png" width="250px"><img src="img/tg2_1.png" width="250px"><img src="img/tg2_3.png" width="250px"><img src="img/tg2_4.png" width="250px">
 
@@ -92,8 +91,7 @@ Set Air Color to -1 to retain existing voxels.
 * You may set Iteration value to a certain number to simplify the process.
 * The voxels with given index are water source, you must attach them first.
 
-<img width="250px" src="img/flow2_1.png">
-<img width="250px" src="img/flow2_2.png">
+<img width="250px" src="img/flow2_1.png"><img width="250px" src="img/flow2_2.png">
 
 ### project
 <a href="#index">index</a>

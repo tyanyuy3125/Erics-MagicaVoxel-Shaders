@@ -1,15 +1,17 @@
 // xs_begin
 // arg : { var = 'seed'	name = 'Seed'	value = '2048' range = '1 2147483648' step = '1' precision = '0' }
 // arg : { var = 'altitude'	name = 'Altitude'	value = '64' range = '0 256' step = '1' precision = '0' }
-// arg : { var = 'map_scale'	name = 'Map Scale'	value = '192' range = '0 2048' step = '1' precision = '0' }
+// arg : { var = 'map_scale_x'	name = 'Map Scale X'	value = '192' range = '0 2048' step = '1' precision = '0' }
+// arg : { var = 'map_scale_y'	name = 'Map Scale Y'	value = '192' range = '0 2048' step = '1' precision = '0' }
 // arg : { var = 'v_color'	name = 'Color'	value = '1' range = '0 255'	step = '1' precision = '0' }
-// arg : { var = 'air_color'	name = 'Air Color'	value = '-1' range = '-1 255'	step = '1' precision = '0' }
+// arg : { var = 'air_color'	name = 'Air Color'	value = '-1' range = '-2 255'	step = '1' precision = '0' }
 // arg : { var = 'x_shifting'	name = 'X-Offset'	value = '0' range = '-2147483648 2147483648'	step = '1' precision = '0' }
 // arg : { var = 'y_shifting'	name = 'Y-Offset'	value = '0' range = '-2147483648 2147483648'	step = '1' precision = '0' }
 // arg : { var = 'z_shifting'	name = 'Z-Offset'	value = '0' range = '-2147483648 2147483648'	step = '1' precision = '0' }
 // arg : { var = 'strength_1'	name = 'Layer 1'	value = '1' range = '-10 10'	step = '0.001' precision = '4' }
 // arg : { var = 'strength_2'	name = 'Layer 2'	value = '0.25' range = '-10 10'	step = '0.001' precision = '4' }
 // arg : { var = 'strength_3'	name = 'Layer 3'	value = '0.0625' range = '-10 10'	step = '0.001' precision = '4' }
+// arg : { var = 'mode'	name = 'Mode'	value = '0' range = '0 3' step = '1' precision = '0' }
 // xs_end
 
 // Terrain Generator 2
@@ -67,15 +69,37 @@ float snoise(vec2 v)
   return 130.0 * dot(m, g);
 }
 
+float func_mapping_a(float from){
+  return 0.5*atan(from)+0.5;
+}
+
+float func_mapping_b(float from){
+  return 0.5*(sin(from*0.5*3.141))+0.5;
+}
+
+float func_mapping_c(float from){
+  return pow(0.4,abs(from));
+}
+
+float func_mapping_d(float from){
+  from=abs(from);
+  if(from<0.2&&from>0)return 1;
+  else return -2*from+1.4;
+}
+
 float map(vec3 v) {
   float vheight=float(height(v));
+  if(air_color==-2.&&voxel(v)!=0.) return voxel(v);
   if(vheight==0.){
     return voxel(v);
   }
-  float height=snoise(vec2((v.x+x_shifting)/map_scale,(v.y+y_shifting)/map_scale))*strength_1
-  +snoise(vec2((v.x+x_shifting)/(0.25*map_scale),(v.y+y_shifting)/(0.25*map_scale)))*strength_2
-  +snoise(vec2((v.x+x_shifting)/(0.0625*map_scale),(v.y+y_shifting)/(0.0625*map_scale)))*strength_3;
-  height=(0.5*atan(height)+0.5)*altitude;
+  float height=snoise(vec2((v.x+x_shifting)/map_scale_x,(v.y+y_shifting)/map_scale_y))*strength_1
+  +snoise(vec2((v.x+x_shifting)/(0.25*map_scale_x),(v.y+y_shifting)/(0.25*map_scale_y)))*strength_2
+  +snoise(vec2((v.x+x_shifting)/(0.0625*map_scale_x),(v.y+y_shifting)/(0.0625*map_scale_y)))*strength_3;
+  if(mode==0.) height=func_mapping_a(height)*altitude;
+  else if(mode==1.) height=func_mapping_b(height)*altitude;
+  else if(mode==2.) height=func_mapping_c(height)*altitude;
+  else height=func_mapping_d(height)*altitude;
   if(v.z<=vheight+height+z_shifting&&v.z>vheight){
     return v_color;
   }
