@@ -4,13 +4,13 @@ aka EMVS.
 Shaders for MagicaVoxel including Terrain Generator, Advanced Flood System etc.
 
 ## Internationalization
-- <a href="./i18n/README-sc.md">简体中文</a> - translated by <a href="http://github.com/codingeric">CodingEric</a>, target version: `55`
+- <a href="./i18n/README-sc.md">简体中文</a> - translated by <a href="http://github.com/codingeric">CodingEric</a>, target version: `58`
 - <a href="./i18n/README-fr.md">Français</a> - translated by <a href="http://moiscript.weebly.com/magicavoxel.html">Pilou</a> - Authorized reproduce, target version: `0.0.7.0`
 
 ( I am looking for new French Translations. )
 
 ## Project Info
-* Current version: `56`
+* Current version: `58`
 * Released under `MIT License`
 
 ## Installation
@@ -40,6 +40,7 @@ At the same time, for the graphical options are very clear, the explanations of 
 ### Index
 * <a href="#tergen">tergen</a>
 * <a href="#tergen2">tergen2</a>
+* <a href="#tergen3">tergen3</a>
 * <a href="#cave">cave</a>
 * <a href="#flow">flow</a>
 * <a href="#flow2">flow2</a>

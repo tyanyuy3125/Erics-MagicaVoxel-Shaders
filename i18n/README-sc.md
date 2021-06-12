@@ -8,7 +8,7 @@
 
 ## 项目信息
 
-* 当前版本: `55`
+* 当前版本: `58`
 * 在 `MIT License` 下发行
 
 ## 安装方法
@@ -35,6 +35,7 @@
 ### <p id="index">目录</p>
 * <a href="#tergen">tergen</a>
 * <a href="#tergen2">tergen2</a>
+* <a href="#tergen3">tergen3</a>
 * <a href="#cave">cave</a>
 * <a href="#flow">flow</a>
 * <a href="#flow2">flow2</a>
@@ -47,8 +48,8 @@
 
 "tergen" 是一个二维的噪波生成器。
 
-* 把 Air Color 设置为 -1 可以不破坏原有的体素。
-* 如图3，使用 MagicaVoxel 0.99.x 提供的“世界”系统外加本着色器提供的偏移选项，您可以创建大规模地形。
+* 把 Air Color 设置为 -1 ，没有地形的体素区域不会被破坏，但是有地形的体素区域内，原有的体素会被地形替换。
+* 把 Air Color 设置为 -2 ，所有已经存在于场景的体素都不会被破坏。
 
 <img src="../img/tg.png" width="250px"><img src="../img/tg1.png" width="250px"><img src="../img/tg2.png" width="250px">
 
@@ -57,9 +58,13 @@
 
 "tergen2" 是 "tergen" 的修改版本，使您能够仅在已有的体素上方创建地形。
 
-把 Air Color 设置为 -1 可以不破坏原有的体素。
 
 <img src="../img/tg2_2.png" width="250px"><img src="../img/tg2_1.png" width="250px"><img src="../img/tg2_3.png" width="250px"><img src="../img/tg2_4.png" width="250px">
+
+### tergen3
+<a href="#index">index</a>
+
+"tergen3" 是 "cave" 的修改版本，但生成的是二维的地形，这使您能够在时间参数的参与下创建噪波动画。
 
 ### cave
 <a href="#index">目录</a>
