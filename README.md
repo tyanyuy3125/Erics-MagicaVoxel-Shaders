@@ -64,6 +64,11 @@ At the same time, for the graphical options are very clear, the explanations of 
 
 <img src="img/tg2_2.png" width="250px"><img src="img/tg2_1.png" width="250px"><img src="img/tg2_3.png" width="250px"><img src="img/tg2_4.png" width="250px">
 
+### tergen3
+<a href="#index">index</a>
+
+"tergen3" is a modified version of "cave" but generates a 2d terrain map, which enables you to create noise animations using Time parameter. 
+
 ### cave
 <a href="#index">index</a>
 
