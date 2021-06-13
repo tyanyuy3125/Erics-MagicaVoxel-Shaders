@@ -1,10 +1,9 @@
 // xs_begin
+// author : 'CodingEric'
 // arg : { var = 'color' name = 'Color' value = '1' range = '0 255' step = '1' precision = '0' }
 // xs_end
 
 // Waterflow Emulator
-// MIT License
-// Copyright (c) 2021 Tianyu Huang
 
 vec3 location;
 bool isNull=true;

@@ -10,7 +10,7 @@ Shaders for MagicaVoxel including Terrain Generator, Advanced Flood System etc.
 ( I am looking for new French Translations. )
 
 ## Project Info
-* Current version: `58`
+* Current version: `59`
 * Released under `MIT License`
 
 ## Installation
@@ -110,8 +110,6 @@ Set Air Color to -1 to retain existing voxels.
 <a href="#index">index</a>
 
 "gol" is the voxel shader for Conway's Game of Life.
-
-The shader is designed for x-y plane. Use single color in your scene, or the shader will destroy it. (To be fixed)
 
 <img src="img/l1.png" width="250px"><img src="img/l2.png" width="250px"><img src="img/l3.png" width="250px">
 

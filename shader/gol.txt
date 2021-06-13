@@ -1,10 +1,10 @@
 // xs_begin
+// author : 'CodingEric'
 // arg : { var = 'color' name = 'Color' value = '1' range = '0 255' step = '1' precision = '0' }
+// arg : { var = 'color_dead' name = 'Dead Color' value = '0' range = '0 255' step = '1' precision = '0' }
 // xs_end
 
 // Game Of Life
-// MIT License
-// Copyright (c) 2021 Tianyu Huang
 
 int dx[8];
 int dy[8];
@@ -35,6 +35,6 @@ float map(vec3 v){
     dy[6]=0;
     dy[7]=-1;
     if(scan(v)==3)return color;
-    if(scan(v)==2)return voxel(v);
-    return 0.;
+    if(scan(v)==2&&voxel(v)==color)return voxel(v);
+    return color_dead;
 }

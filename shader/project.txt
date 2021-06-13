@@ -1,10 +1,9 @@
 // xs_begin
+// author : 'CodingEric'
 // arg : { var = 'z_index' name = 'Z-index' value = '1' range = '0 255' step = '1' precision = '0' }
 // xs_end
 
 // Projecting a 2D plane to 3D object below it
-// MIT License
-// Copyright (c) 2021 Tianyu Huang
 
 int layerHeight;
 float x,y,z;

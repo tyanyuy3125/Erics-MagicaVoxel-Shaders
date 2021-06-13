@@ -1,4 +1,5 @@
 // xs_begin
+// author : 'CodingEric'
 // arg : { var = 'seed'	name = 'Seed'	value = '2048' range = '1 2147483648' step = '1' precision = '0' }
 // arg : { var = 'altitude'	name = 'Altitude'	value = '128' range = '0 256' step = '1' precision = '0' }
 // arg : { var = 'map_scale_x'	name = 'Map Scale X'	value = '192' range = '0 2048' step = '1' precision = '0' }
@@ -8,15 +9,13 @@
 // arg : { var = 'x_shifting'	name = 'X-Offset'	value = '0' range = '-2147483648 2147483648'	step = '1' precision = '0' }
 // arg : { var = 'y_shifting'	name = 'Y-Offset'	value = '0' range = '-2147483648 2147483648'	step = '1' precision = '0' }
 // arg : { var = 'z_shifting'	name = 'Z-Offset'	value = '0' range = '-2147483648 2147483648'	step = '1' precision = '0' }
-// arg : { var = 'strength_1'	name = 'Layer 1'	value = '1' range = '-10 10'	step = '0.001' precision = '4' }
-// arg : { var = 'strength_2'	name = 'Layer 2'	value = '0.25' range = '-10 10'	step = '0.001' precision = '4' }
-// arg : { var = 'strength_3'	name = 'Layer 3'	value = '0.0625' range = '-10 10'	step = '0.001' precision = '4' }
+// arg : { var = 'strength_1'	name = 'Layer 1'	value = '1' range = '-10 10'	step = '0.001' precision = '3' }
+// arg : { var = 'strength_2'	name = 'Layer 2'	value = '0.25' range = '-10 10'	step = '0.001' precision = '3' }
+// arg : { var = 'strength_3'	name = 'Layer 3'	value = '0.0625' range = '-10 10'	step = '0.001' precision = '3' }
 // arg : { var = 'mode'	name = 'Mode'	value = '0' range = '0 3' step = '1' precision = '0' }
 // xs_end
 
 // Terrain Generator
-// MIT License
-// Copyright (c) 2021 Tianyu Huang
 
 vec3 mod289(vec3 x) {
   return x - floor(x * (1.0 / 289.0)) * 289.0;

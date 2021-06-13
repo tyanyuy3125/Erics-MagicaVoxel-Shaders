@@ -1,4 +1,5 @@
 // xs_begin
+// author : 'CodingEric'
 // arg : { var = 'seed'	name = 'Seed'	value = '2048' range = '1 2147483648' step = '1' precision = '0' }
 // arg : { var = 'map_scale'	name = 'Map Scale'	value = '64' range = '0 2048' step = '1' precision = '0' }
 // arg : { var = 'v_color'	name = 'Color'	value = '1' range = '0 255'	step = '1' precision = '0' }
@@ -9,8 +10,6 @@
 // xs_end
 
 // 3D Noise Generator
-// MIT License
-// Copyright (c) 2021 Tianyu Huang
 
 vec3 mod289(vec3 x) {
   return x - floor(x * (1.0 / 289.0)) * 289.0;
