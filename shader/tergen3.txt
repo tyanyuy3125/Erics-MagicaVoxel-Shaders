@@ -98,8 +98,8 @@ float func_mapping_c(float from){
 
 float func_mapping_d(float from){
   from=abs(from);
-  if(from<0.2&&from>0)return 1;
-  else return -2*from+1.4;
+  if(from<0.2&&from>0.)return 1.0;
+  else return -2.0*from+1.4;
 }
 
 float map(vec3 v){
